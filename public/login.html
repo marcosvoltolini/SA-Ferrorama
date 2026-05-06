@@ -1,26 +1,42 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Red Rush</title>
-  <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="stylesheet" href="../assets/style/style.css">
 </head>
+
 <body>
-  
+
   <header>
     <nav class="nave">
-      <img src="assets/imag/Logo_Red_Rush.png" alt="Logo">
+      <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
       <h1>Red Rush</h1>
-      <button></button>
+      <p>Cadastrar conta</p>
     </nav>
   </header>
 
   <main>
-
+    <div class="container">
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Senha:</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button id="bot" type="submit">Login</button>
+      </form>
+    </div>
   </main>
 
   <footer>
 
   </footer>
 </body>
+
 </html>
