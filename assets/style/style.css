@@ -69,9 +69,23 @@ main{
 
 /* CSS reutilizado de marcos*/
 
+.formsss {
+    border: solid 2px #b47474;
+    border-radius: 10px;
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    background-color: #b47474;
+    
+}
 
 
+.config {
+    margin-left: 30px;
 
+}
 
 
 
