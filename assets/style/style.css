@@ -37,25 +37,32 @@ main{
     padding-bottom: 5px;
     background-color: #b94040;
     border-color: #b94040;
-    font-size: 20px;
+    font-size: 30px;
 }
 #log {
-    margin-left: 60px;
-    
+    margin-left: 40px;
+    font-size: 50px;
 }
 .formss {
     border: solid 2px #b47474;
     border-radius: 10px;
     padding: 50px;
-    padding-left: 130px;
-    padding-right: 130px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 70px;
     background-color: #b47474;
 }
 #links{
     color: black;
 }
+#back {
+    font-size: 30px;
+}
 
-
+.ck {
+    font-size: 20px;
+}
 
 
 /*Ramon*/
