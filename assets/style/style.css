@@ -20,17 +20,31 @@ body {
     align-items: center;
     justify-content: center;
     height: 80vh;
-    border: solid 1px #ccc;
 }
 #bot{
-    margin: 60px;
-    border-radius: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;  
-    padding-bottom: 10px;
+    margin-left: 0px;
+    border-radius: 15px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 5px;  
+    padding-bottom: 5px;
     background-color: #b94040;
+    border-color: #b94040;
+    font-size: 20px;
 }
+#log {
+    margin-left: 60px;
+    
+}
+.formss {
+    border: solid 2px #b47474;
+    border-radius: 10px;
+    padding: 50px;
+    padding-left: 130px;
+    padding-right: 130px;
+    background-color: #b47474;
+}
+
 
 
 
