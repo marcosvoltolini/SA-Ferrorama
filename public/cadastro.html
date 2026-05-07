@@ -1,57 +1,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Red Rush</title>
+  <link rel="stylesheet" href="../assets/style/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
-    <header>
-        <div>
-            <h1>Red Rush</h1>
+<body class="bodi">
+
+  <header>
+    <nav class="nave">
+      <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+      <h1>Red Rush</h1>
+     <p>ADM page</p>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <form class="formss" action="/login" method="POST">
+        <h2 id="log">Cadastro</h2>
+        <label id="back" for="email">Nome completo</label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label id="back" for="password">Nome de usuario</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label id="back" for="password">País</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label id="back" for="password">Email</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label id="back" for="password">Numero de celular</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label id="back" for="password">Senha</label>
+        <br>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <div class="check">
+          <br>
         </div>
-    </header>
+        <button id="bot" type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </main>
 
-    <main>
-        <section class="formulario-cadastro">
-            <p>Cadastro</p>
-            <form id="formcad">
-                <div class="NomeComp">
-                    <label for="inputEmail4" class="form-label">Nome Completo</label>
-                    <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="NomeUsu">
-                    <label for="inputPassword4" class="form-label">Nome de Usuario</label>
-                    <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="Pais">
-                    <label for="inputAddress" class="form-label">País</label>
-                    <input type="text" class="form-control" id="inputAddress">
-                </div>
-                <div class="email">
-                    <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="Numcel">
-                    <label for="inputCity" class="form-label">Número de celular</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="senha">
-                    <label for="inputCity" class="form-label">Senha</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>              
-                <div class="Cadastro">
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </div>
+  <footer>
 
-            </form>
-        </section>
-    </main>
-
-    <main>
-
-    </main>
+  </footer>
 </body>
 
 </html>
