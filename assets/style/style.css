@@ -9,7 +9,7 @@ main{
 .nave{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 20px;
     font-family:'Times New Roman', Times, serif;
     font-size: larger;
@@ -63,7 +63,11 @@ main{
 .ck {
     font-size: 20px;
 }
-
+#gif {
+    width: 150px;
+    border-radius: 50px;
+    opacity:0.7;
+}
 
 /*Ramon*/
 
