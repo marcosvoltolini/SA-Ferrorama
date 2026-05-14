@@ -9,11 +9,15 @@ main{
 .nave{
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content:space-around;
     padding: 20px;
     font-family:'Times New Roman', Times, serif;
     font-size: larger;
     background-color: #fff8ef;
+    margin-right: 90px;
+}
+#hs{
+    color:#920404;
 }
 .logo {
     width: 150px;
@@ -69,11 +73,45 @@ main{
     opacity:0.7;
 }
 /*Home Marcos*/
-.burguer{
+.material-icons{
     cursor: pointer;
+    
 }
-
-
+.navs {
+    justify-content: space-around;
+    display: flex;
+    border: solid 1px #b47474;
+    background-color: #b47474;
+    color: black;
+    padding: 10px;
+}
+#lk {
+    text-decoration: none;
+    color: black;
+}
+body {
+    background-color: #fff8ef;
+    gap: 0%;
+    margin: 0%;
+}
+.trem {
+    width: 500px;
+    margin-top: 340px;
+}
+.bem {
+    display:flex;
+    text-align: center;
+    align-items: center;
+}
+#bvd {
+    margin-left: 13%;
+    font-size: 100px;
+    border: solid 1px #920404;
+    background-color: #920404;
+    border-radius: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color:#fff8ef;
+}
 
 
 
