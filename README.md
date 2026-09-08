@@ -20,4 +20,12 @@
    
     Dividimos as tarefas por integrante e definimos um tempo limite para conclusão.
 
- - Funcionalidades
+ - Implementadas
+   - Sistema de login com validação
+   - Cadastro de usuários com validação
+   - Dashboard para administradores
+   - Monitoramento de trens em tempo real
+   - Lista de usuários cadastrados
+   - Design responsivo
+   - Validação de formulários (frontend)
+   - Busca de usuários
