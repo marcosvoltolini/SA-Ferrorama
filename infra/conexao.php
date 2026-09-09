@@ -3,9 +3,9 @@ $host = "localhost";
 
 $usuario = "root";
 
-$senha = "root";
+$senha = "";
 
-$banco = "SA_Ferrorama";
+$banco = "SA_Ferrorama";                
 
 $conexao = new mysqli($host, $usuario, $senha, $banco);
 
