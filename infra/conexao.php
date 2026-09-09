@@ -5,7 +5,7 @@ $usuario = "root";
 
 $senha = "root";
 
-$banco = "SA_Ferrorama";
+$banco = "SA_Ferrorama";                
 
 $conexao = new mysqli($host, $usuario, $senha, $banco);
 
