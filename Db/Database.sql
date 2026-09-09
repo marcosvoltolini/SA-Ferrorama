@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS SA_Ferrorama;
+
+USE SA_Ferrorama;
+
+CREATE TABLE IF NOT EXISTS usuarios(
+    id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome_usuario VARCHAR (100) NOT NULL
+);
