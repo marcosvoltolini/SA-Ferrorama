@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red Rush!</title>
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav class="nave">
-            <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            <img class="logo" src="assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
             <h1 id="hs">Red Rush</h1>
             <span id="burguer" class="material-icons">menu</span>
         </nav>
@@ -29,7 +29,7 @@
 
     <main>
         <div class="bem">
-            <img class="trem" src="../assets/imag/trem.png" alt="trem">
+            <img class="trem" src="assets/imag/trem.png" alt="trem">
             <h1 id="bvd">Bem Vindo!</h1>
         </div>
     </main>
