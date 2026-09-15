@@ -205,6 +205,19 @@ body {
 
 
 /*Ramon*/
+.bens{
+    display:flex;
+    text-align: center;
+    align-items: center;
+    color: #b47474;
+}
+
+.jacobite{
+    width: 200px;
+    margin-top: 340px;
+
+}
+
 
 /* CSS reutilizado de marcos*/
 
