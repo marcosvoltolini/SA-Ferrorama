@@ -18,12 +18,13 @@
         <nav class="nave">
             <img class="logo" src="assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
             <h1 id="hs">Red Rush</h1>
-            <span id="burguer" class="material-icons">menu</span>
+            
         </nav>
         <nav class="navs">
             <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
             <a id="lk" href="public/Horario_trem.php">Horários</a>
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
+            <a id="lk" href="public/login.php">Fazer Login</a>
         </nav>
     </header>
 
