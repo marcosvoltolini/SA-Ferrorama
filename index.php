@@ -16,9 +16,12 @@
 <body>
     <header>
         <nav class="nave">
+            <div class="lg">
             <img class="logo" src="assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            </div>
+            <div class="red">
             <h1 id="hs">Red Rush</h1>
-            
+            </div>
         </nav>
         <nav class="navs">
             <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
