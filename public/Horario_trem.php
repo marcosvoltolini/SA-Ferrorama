@@ -26,9 +26,10 @@
         </nav>
     </header>
 
-    <main>
-        <div class="bens">
-            <img class="jacobite" src="../assets/imag/jacobite.png" alt="jacobite">
+    <main class= "bens">
+        <div class= "foto">
+            <img  src="../assets/imag/jacobite.png" alt="jacobite">
+            <h1>Jacobite</h1>
         
         </div>
     </main>
