@@ -29,10 +29,8 @@
         <br>
         <input type="password" id="password" name="password" required>
         <br>
-        <div class="check">
-          <input id="chk" type="checkbox" name="check" id="checks">
-          <label class="ck" for="checkbox">Lembrar de mim</label>
-        </div>
+        <a href="cadastrar_usuario.php">Cadastre-se</a>
+        <br>
         <button id="bot" type="submit">Login</button>
       </form>
     </div>
