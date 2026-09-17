@@ -199,103 +199,31 @@ body {
     font-size: 25px;
 }
 
-
-
-
-
-
 /*Ramon*/
-
-/* ===== Reset básico ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Georgia, 'Times New Roman', serif;
-  background-color: #fdf3ec;
-  color: #3a2020;
-}
-
-/* ===== Header / Navegação ===== */
-header {
-  background-color: #c98686;
-}
-
-.nave {
+.bensgrand{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 24px;
-}
-
-.logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-#hs {
-  font-size: 1.8rem;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
-#burguer {
-  color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
-  display: none; /* aparece só em telas pequenas, ver media query abaixo */
-}
-
-.navs {
-  display: flex;
   justify-content: center;
-  gap: 14px;
-  background-color: #e7b9b9;
-  padding: 10px;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
 }
-
-.botao {
-  background-color: #f2d6d6;
-  border: 1px solid #b57a7a;
-  border-radius: 4px;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: #5a2e2e;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background-color 0.2s ease;
-}
-
-.botao:hover {
-  background-color: #e6bcbc;
-}
-
-/* ===== Conteúdo principal ===== */
-main {
-  padding: 20px;
-}
-
-/*Ramon*/
 
 .bens{
     display: flex;
     background-color: #b47474;
+    align-items: center;
+    flex-direction: column;
     padding: 20px;
-  
+     margin: 20px;
+     border-radius: 15px;
    
 }
 
 
-.jacobite{
-    width: 200px;
-    margin-top: 340px;
-
+.fanfas{
+    background-color: #eca6a6;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 

@@ -17,7 +17,7 @@
     <header>
         <nav class="nave">
             <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
-            <h1 id="hs">Red Rush</h1>
+            <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
             <span id="burguer" class="material-icons">menu</span>
         </nav>
         <nav class="navs">
@@ -26,12 +26,33 @@
         </nav>
     </header>
 
-    <main class= "bens">
-        <div class= "foto">
+    <main>
+    <div class= "bensgrand">
+            <div class= "bens">
             <img  src="../assets/imag/jacobite.png" alt="jacobite">
-            <h1>Jacobite</h1>
+            <h1 class= fanfas>Jacobite</h1>
+            <h4>07:30</h4>          
+    </div>
+            <div class= "bens">
+                <img src="../assets/imag/Rocky.png" alt="rocky">
+                <h1 class= fanfas>Rocky</h1>
+                <h4>08:00</h4>
+            </div>
+
+            <div class= bens>
+                <img src="../assets/imag/orient.png" alt="orinet">
+                <h5 class= fanfas>Venice Simplon-Orient-Express</h5>
+                <h4>09:20</h4>
+
+            </div>
+
+            <div class= "bens">
+                <img src="../assets/imag/bernina.png" alt="bernina">
+                <h3 class= fanfas>Bernina Express</h3>
+                <h4>07:20</h4>
+            </div>
+   
         
-        </div>
     </main>
 
     <footer>
