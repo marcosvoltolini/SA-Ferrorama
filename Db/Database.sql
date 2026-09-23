@@ -13,3 +13,9 @@ ALTER TABLE usuarios
 
 ALTER TABLE usuarios
     ADD UNIQUE KEY uk_email_usuario (email_usuario);
+
+    USE SA_Ferrorama;
+ 
+ALTER TABLE usuarios
+    ADD COLUMN tipo_usuario ENUM('comum', 'administrador') NOT NULL DEFAULT 'comum' AFTER senha_usuario;
+    UPDATE usuarios SET tipo_usuario = 'administrador' WHERE email_usuario = 'Marcos_Voltolini@gmail.com';
