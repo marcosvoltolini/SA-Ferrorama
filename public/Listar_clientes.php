@@ -2,7 +2,7 @@
 require_once 'conexao.php';
 
 try {
-    // Consulta os dados da tabela 'usuarios' do banco 'sa_ferrorama'
+   
     $stmt = $pdo->query('SELECT * FROM usuarios');
     $usuarios = $stmt->fetchAll();
 } catch (\PDOException $e) {
@@ -19,7 +19,7 @@ try {
 <head>
   <meta charset="UTF-8">
   <title>Lista de Usuários</title>
-  <!-- Importação do CSS externo -->
+  
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -39,7 +39,7 @@ try {
         </tr>
       </thead>
       <tbody>
-        <!-- Loop para percorrer cada usuário do banco -->
+        
         <?php foreach ($usuarios as $usuario): ?>
           <tr>
             <td><?= htmlspecialchars($usuario['id']) ?></td>
