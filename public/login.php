@@ -1,11 +1,11 @@
 <?php
 session_start();
-
+ 
 if (isset($_SESSION["id_usuario"])) {
     header("Location: ../index.php");
     exit;
 }
-
+ 
 require_once __DIR__ . "/../infra/conexao.php";
  
 $erro = "";
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $erro = "Preencha email e senha.";
     } else {
         $stmt = $conexao->prepare(
-            "SELECT id_usuario, nome_usuario, senha_usuario FROM usuarios WHERE email_usuario = ?"
+            "SELECT id_usuario, nome_usuario, senha_usuario, tipo_usuario FROM usuarios WHERE email_usuario = ?"
         );
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -31,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($usuario && password_verify($senha, $usuario["senha_usuario"])) {
             $_SESSION["id_usuario"] = $usuario["id_usuario"];
             $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
+            $_SESSION["tipo_usuario"] = $usuario["tipo_usuario"];
  
             header("Location: ../index.php");
             exit;
         } else {
-            // Mensagem genérica de propósito: não dizer se foi o email ou a senha que errou
             $erro = "Email ou senha inválidos.";
         }
     }
