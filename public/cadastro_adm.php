@@ -26,4 +26,23 @@ if ($nome === "" || $email ===  "" || $senha === "") {
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $erro ="Este email já está cadastrado.";
+    }else{ 
+        $hash = password_hash($senha, PASSWORD_DEFAULT);
+        $insert = $conexao-> prepare(
+            "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario) VALUES (?,?,?,?)"
+        );
+        $insert->bind_param("ssss", $nome, $email, $hash, $tipo);
+
+        if ($insert->execute()){
+            $Sucesso = "usuario cadastrado com sucesso como: " . htmlspecialchars($tipo) . ".";
+        } else {
+            $erro = "Erro ao cadastrar:" . $conexao->error;
+        }
+        $insert->close();
+    }
+    $stmt->close();
 }
+?>
