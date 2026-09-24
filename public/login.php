@@ -2,7 +2,12 @@
 session_start();
  
 if (isset($_SESSION["id_usuario"])) {
-    header("Location: ../index.php");
+  if (($_SESSION["tipo_usuario"] ?? "") === "administrador")
+    {
+      header("Location: ../index_admin.php");
+    }else{
+      header("Location: ../index.php");
+    }
     exit;
 }
  
@@ -27,14 +32,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $usuario = $resultado->fetch_assoc();
         $stmt->close();
  
-        // Verifica se o usuário existe e se a senha bate com o hash salvo
+        
         if ($usuario && password_verify($senha, $usuario["senha_usuario"])) {
             $_SESSION["id_usuario"] = $usuario["id_usuario"];
             $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
             $_SESSION["tipo_usuario"] = $usuario["tipo_usuario"];
- 
-            header("Location: ../index.php");
+
+            if ($usuario["tipo_usuario"] === "administrador") {
+              header("Location: ../index_admin.php");
+            } else {
+              header("Location: ../index.php");
+            }
             exit;
+            
         } else {
             $erro = "Email ou senha inválidos.";
         }
