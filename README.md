@@ -7,10 +7,8 @@
     - Frontend: HTML, CSS, JS
     - Backend (planejado): PHP com XAMPP
     - Banco de Dados(planejado): MySQL
-
- - Integrantes da equipe e responsabilidades
     
-                                                    * PRIMEIRA ETAPA *
+                                             * Integrantes da equipe e responsabilidades *
 
     - Davi Rosa
         - Pesquisa sobre PDO
@@ -44,3 +42,48 @@
         - Rota dos trens
         - Criar visualização de trens
         - Criar cadastro dos sensores
+
+                                             * Identidade visual *
+
+        A identidade visual do RED RUSH está sendo desenvolvida com uma estética minimalista e elegante, buscando trazer informação e conhecimento para os usuários.
+    
+    - Cores
+        - tons de vermelho
+            Busca trazer elegancia e intensidade para o site.
+
+        - Laranja claro
+            causa um contraste com os tons de vermelho sendo algo mais delicado e refinado.
+
+    - Tipografia
+        Usamos uma tipografia finha clássica tornando o site bonito de fácil leitura
+
+    - logo
+        Uma ilustração de uma antiga locomotiva a vapor do século xix, ao lado, as siglas do site
+
+                                             * Estrutura do projeto *
+SA-FERRORAMA
+-assets
+    -imag
+        bernina-rota.png
+        bernina.png
+        Captura de tela 2026-05-25 201647.png
+        jacobite-rota.png
+        jacobite.png
+        Logo_red_rush.png
+        orient.png
+        person.png
+        person2.webp
+        Rocky_Mountaineer_Routes.png
+        Rocky.png
+        trem.gif
+        trem.png
+        venice rota.png
+    -style
+        style.css
+-DB
+    Database.sql
+-doc
+    pesquisa-PDO.md
+    pesquisa-scrum.md
+    pesquisa-xampp.md
+    Prpesquisa-crud.md
