@@ -8,42 +8,9 @@
     - Backend (planejado): PHP com XAMPP
     - Banco de Dados(planejado): MySQL
     
-                                             * Integrantes da equipe e responsabilidades *
 
-    - Davi Rosa
-        - Pesquisa sobre PDO
-        - Pesquisa SCRUMM
-        - Criar LOGIN para novos usuários
-        - Transição para php
-        - Criar cadastro para trens
 
-    - Marcos Paulo
-        - Criar banco de dados
-        - Cadastro de Sensores
-        - Transição de html para php
-        - Divisão de responsabilidades
-        - Reorganizar o HOME
-        - Criar dashbord do ADM
-
-    - Ramon Trindade
-        - Criar banco de dados
-        - Visualização de horários
-        - Divisão de responsabilidades
-        - Cadastro de usuários
-        - Estrutura do projeto
-        - Criar dashbord do ADM
-        - Visualização de usuários
-
-    - Rebeca Sarrea
-        - Organizar e atualizar README
-        - Organização do sistema
-        - Organizar Home
-        - Pesquisas (XAMPP, SCRUM E CRUD)
-        - Rota dos trens
-        - Criar visualização de trens
-        - Criar cadastro dos sensores
-
-                                             * Identidade visual *
+                                                             * Identidade visual *
 
         A identidade visual do RED RUSH está sendo desenvolvida com uma estética minimalista e elegante, buscando trazer informação e conhecimento para os usuários.
     
@@ -60,9 +27,9 @@
     - logo
         Uma ilustração de uma antiga locomotiva a vapor do século xix, ao lado, as siglas do site
 
-                                             * Estrutura do projeto *
-SA-FERRORAMA
--assets
+                                                          * Estrutura do projeto *
+- SA-FERRORAMA
+    -assets
     -imag
         bernina-rota.png
         bernina.png
@@ -80,10 +47,43 @@ SA-FERRORAMA
         venice rota.png
     -style
         style.css
--DB
-    Database.sql
--doc
-    pesquisa-PDO.md
-    pesquisa-scrum.md
-    pesquisa-xampp.md
-    Prpesquisa-crud.md
+    -DB
+     Database.sql
+    -doc
+        pesquisa-PDO.md
+        pesquisa-scrum.md
+        pesquisa-xampp.md
+        Pesquisa-crud.md
+    -infra
+        conexao.php
+        teste_conexao.php
+    -public
+        cadastrar_admin.php
+        cadastrar_usuario.php
+        cadastro_trem.php
+        cadastro-sensor.php
+       Horario_trem.php
+       Listar_clientes.php
+       Listar_sensor.php
+       Listar_trens.php
+       login.php
+       Rota_trem.php
+       verifica_admin.php
+    -script
+        script.js
+    -index_admin.php
+    -index.php
+    -LICENSE
+    -README.md
+
+
+
+                                                                * Considerações Finais *
+
+    O desenvolvimento do SA-Ferrorama possibilita à equipe colocar em prática conhecimentos relacionados à programação web, PHP, banco de dados, criação de interfaces, documentação de sistemas, controle de versões e trabalho em equipe.
+
+    O projeto consiste na simulação de um ambiente de gestão ferroviária, concentrando recursos para o gerenciamento de trens, rotas, sensores e funcionários em uma única aplicação.
+
+    Por meio das etapas de análise, desenvolvimento e implementação, a equipe busca construir um sistema organizado, funcional e intuitivo, aplicando de forma prática os conhecimentos adquiridos durante o curso técnico em Desenvolvimento de Sistemas.
+
+    
