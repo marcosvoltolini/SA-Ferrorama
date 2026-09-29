@@ -1,5 +1,5 @@
 <?php
-require '../conexao.php';
+require_once __DIR__ . "/../infra/conexao.php";
 
 $mensagem = '';
 
@@ -76,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <option value="0">Selecione</option>
                             <option value="1">Carga</option>
                             <option value="2">Passageiro</option>
-                            <option value="3">Manutenção</option>
                         </select> <br><br>
                         <button type="submit">Cadastrar</button>
                     </form>
