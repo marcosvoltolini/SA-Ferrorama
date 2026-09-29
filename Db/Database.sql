@@ -14,3 +14,11 @@ CREATE TABLE usuarios (
 
 INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario)
 VALUES ('Marcos Voltolini', 'Marcos_Voltolini@gmail.com', 'Volto09876', 'administrador');
+ 
+ USE SA_Ferrorama;
+
+CREATE TABLE trens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    tipo ENUM('Carga', 'Passageiro') NOT NULL
+);
