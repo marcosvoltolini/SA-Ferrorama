@@ -35,6 +35,7 @@ if (!$eh_admin){
             <a id="lk" href="public/Horario_trem.php">Horários</a>
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
             <a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a>
+            <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
         </nav>
     </header>
 
