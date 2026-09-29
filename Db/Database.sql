@@ -22,3 +22,11 @@ CREATE TABLE trens (
     nome VARCHAR(100) NOT NULL,
     tipo ENUM('Carga', 'Passageiro') NOT NULL
 );
+
+CREATE TABLE sensores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    tipo ENUM('localização', 'Velocidade', 'Energia') NOT NULL,
+    trem_id INT NOT NULL,
+    FOREIGN KEY (trem_id) REFERENCES trens(id)
+);
