@@ -6,13 +6,13 @@ require_once __DIR__ . "/../infra/conexao.php";
 require_once __DIR__ . "/verifica_admin.php";
 
 
-if (!isset($_GET["id_usuario"]) || !is_numeric($_GET["id_usuario"])) {
+if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
     die("Erro: usuário não encontrado.");
 }
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM usuarios WHERE id_usuario = ?";
+$sql = "DELETE FROM usuarios WHERE id = ?";
 
 $stmt = mysqli_prepare($conn, $sql);
 
@@ -21,7 +21,7 @@ if (!$stmt) {
 }
 
 
-if (!mysqli_stmt_bind_param($stmt, "i", $id_usuario)) {
+if (!mysqli_stmt_bind_param($stmt, "i", $id)) {
     mysqli_stmt_close($stmt);
     die("Erro ao preparar os dados para exclusão.");
 }
