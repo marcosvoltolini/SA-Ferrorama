@@ -34,8 +34,6 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?php echo $linha["email_usuario"]; ?></td>
             <td><?php echo $linha["senha_usuario"]; ?></td>
             <td>
-                <a href="editar.php?id=<?php echo $linha["id"]; ?>">Editar</a>
-|
                 <a href="excluir.php?id=<?php echo $linha["id"]; ?>"
                     onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
             </td>
