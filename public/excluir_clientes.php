@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../infra/conexao.php";
 $id = $_GET["id"];
 
-$sql = "DELETE FROM Pratos WHERE id= ?";
+$sql = "DELETE FROM usuarios WHERE id= ?";
 
 $stmt = mysqli_prepare($conexao, $sql);
 
