@@ -1,56 +1,56 @@
 <?php
-require_once 'conexao.php';
+require "../infra/conexao.php";
 
-try {
-   
-    $stmt = $pdo->query('SELECT * FROM usuarios');
-    $usuarios = $stmt->fetchAll();
-} catch (\PDOException $e) {
-    echo "Erro ao consultar o banco de dados: " . $e->getMessage();
-    exit;
-}
+
+$sql = "SELECT cliente AS nome_usuario
+        FROM pratos
+        INNER JOIN usuarios ON pratos.usuario_id = usuarios.id";
+
+$resultado = mysqli_query($conexao, $sql);
 ?>
 
-
-
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Lista de Usuários</title>
-  
-  <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Pratos</title>
 </head>
 <body>
 
-  <h1>Usuários Cadastrados</h1>
+<h1>Lista de Pratos</h1>
 
-  <?php if (empty($usuarios)): ?>
-    <p>Nenhum usuário encontrado.</p>
-  <?php else: ?>
-    <table>
-      <thead>
+<a href="cadastrar_prato.php">Cadastrar novo prato</a>
+<br><br>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Preço</th>
+        <th>Cadastrado por</th>
+        <th>Ações</th>
+    </tr>
+
+    <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
         <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>E-mail</th>
-          <th>Data de Cadastro</th>
+            <td><?php echo $linha["id"]; ?></td>
+            <td><?php echo $linha["nome"]; ?></td>
+            <td><?php echo $linha["descricao"]; ?></td>
+            <td><?php echo $linha["categoria"]; ?></td>
+            <td>R$ <?php echo number_format($linha["preco"], 2, ",", "."); ?></td>
+            <td><?php echo $linha["nome_usuario"]; ?></td>
+            <td>
+                <a href="editar.php?id=<?php echo $linha["id"]; ?>">Editar</a>
+|
+                <a href="excluir.php?id=<?php echo $linha["id"]; ?>"
+                    onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+            </td>
         </tr>
-      </thead>
-      <tbody>
-        
-        <?php foreach ($usuarios as $usuario): ?>
-          <tr>
-            <td><?= htmlspecialchars($usuario['id']) ?></td>
-            <td><?= htmlspecialchars($usuario['nome']) ?></td>
-            <td><?= htmlspecialchars($usuario['email']) ?></td>
-            <td><?= date('d/m/Y', strtotime($usuario['data_cadastro'])) ?></td>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
-  <?php endif; ?>
+    <?php } ?>
+
+</table>
 
 </body>
 </html>
