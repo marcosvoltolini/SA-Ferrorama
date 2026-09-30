@@ -12,11 +12,5 @@ if (isset($_GET["id_usuario"])) {
     mysqli_stmt_close($stmt);
 }
 
-<<<<<<< HEAD
-header("Location: ../index.php");
-exit();
-?>
-=======
 header("Location: ../index_admin.php");
 exit();
->>>>>>> 876f7711ac0e74060ed48606187bd2193b771cb5
