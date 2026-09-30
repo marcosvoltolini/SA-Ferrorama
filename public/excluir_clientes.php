@@ -12,5 +12,5 @@ mysqli_stmt_execute($stmt);
 
 mysqli_stmt_close($stmt);
 
-header("Location: ../index.php");
+header("Location: ../index_admin.php");
 exit();
