@@ -32,12 +32,10 @@ $resultado = mysqli_query($conexao, $sql);
 
     <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
         <tr>
-            <td><?php echo $linha["id"]; ?></td>
-            <td><?php echo $linha["nome"]; ?></td>
-            <td><?php echo $linha["descricao"]; ?></td>
-            <td><?php echo $linha["categoria"]; ?></td>
-            <td>R$ <?php echo number_format($linha["preco"], 2, ",", "."); ?></td>
+            <td><?php echo $linha["id_usuario"]; ?></td>
             <td><?php echo $linha["nome_usuario"]; ?></td>
+            <td><?php echo $linha["email_usuario"]; ?></td>
+            <td><?php echo $linha["senha_usuario"]; ?></td>
             <td>
                 <a href="editar.php?id=<?php echo $linha["id"]; ?>">Editar</a>
 |
