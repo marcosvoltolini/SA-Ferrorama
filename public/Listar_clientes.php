@@ -23,11 +23,8 @@ $resultado = mysqli_query($conexao, $sql);
     <tr>
         <th>ID</th>
         <th>Nome</th>
-        <th>Descrição</th>
-        <th>Categoria</th>
-        <th>Preço</th>
-        <th>Cadastrado por</th>
-        <th>Ações</th>
+        <th>email</th>
+        <th>senha</th>
     </tr>
 
     <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
