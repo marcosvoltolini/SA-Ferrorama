@@ -81,8 +81,6 @@
     -LICENSE
     -README.md
 
-
-
                                                         * Considerações Finais *
 
     O desenvolvimento do SA-Ferrorama possibilita à equipe colocar em prática conhecimentos relacionados à programação web, PHP, banco de dados, criação de interfaces, documentação de sistemas, controle de versões e trabalho em equipe.
