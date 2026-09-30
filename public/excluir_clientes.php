@@ -6,7 +6,7 @@ require_once __DIR__ . "/../infra/conexao.php";
 require_once __DIR__ . "/verifica_admin.php";
 
 
-if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
+if (!isset($_GET["id_usuario"]) || !is_numeric($_GET["id_usuario"])) {
     die("Erro: usuário não encontrado.");
 }
 
