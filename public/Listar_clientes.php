@@ -14,9 +14,9 @@ $resultado = mysqli_query($conexao, $sql);
 </head>
 <body>
 
-<h1>Lista de Pratos</h1>
+<h1>Lista de usuarios</h1>
 
-<a href="cadastrar_prato.php">Cadastrar novo prato</a>
+<a href="cadastrar_usuario.php">Cadastrar novo usuario</a>
 <br><br>
 
 <table border="1" cellpadding="8">
