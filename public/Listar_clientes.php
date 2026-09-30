@@ -1,20 +1,22 @@
 <?php
-require "../infra/conexao.php";
+require_once __DIR__ . "/verifica_admin.php";
+require_once __DIR__ . "/../infra/conexao.php";
 
-
-$sql = "SELECT cliente AS nome_usuario
-        FROM pratos
-        INNER JOIN usuarios ON pratos.usuario_id = usuarios.id";
-
-$resultado = mysqli_query($conexao, $sql);
+$erro = "";
+$sucesso = "";
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Pratos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de clientes - Red Rush!</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 <body>
 
 <h1>Lista de Pratos</h1>

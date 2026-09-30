@@ -1,6 +1,5 @@
 <?php
-require '../conexao.php';
-
+require_once __DIR__ . "/../infra/conexao.php";
 $mensagem = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

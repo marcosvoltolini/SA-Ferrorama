@@ -31,24 +31,24 @@
             <div class= "bens">
             <img  src="../assets/imag/jacobite.png" alt="jacobite">
             <h1 class= imgrota>Jacobite</h1>
-            <img  src="../assets/imag/jacobite-rota.png" alt="jacobite">
+            <img class="rotinhas" src="../assets/imag/jacobite-rota.png" alt="jacobite">
     </div>
             <div class= "bens">
                 <img src="../assets/imag/Rocky.png" alt="rocky">
                 <h1 class= imgrota>Rocky</h1>
-                <img  src="../assets/imag/Rocky_Mountaineer_Routes.png" alt="rocky">
+                <img class="rotinhas" src="../assets/imag/Rocky_Mountaineer_Routes.png" alt="rocky">
             </div>
 
             <div class= bens>
                 <img src="../assets/imag/orient.png" alt="orinet">
-                <h5 class= imgrota>Venice Simplon-Orient-Express</h5>
-                <img  src="../assets/imag/venice rota.png" alt="orinet">
+                <h1 class= imgrotave> Venice Simplon-Orient-Express </h1>
+                <img class="rotinhas" src="../assets/imag/venice rota.png" alt="orinet">
             </div>
 
             <div class= "bens">
                 <img src="../assets/imag/bernina.png" alt="bernina">
-                <h3 class= imgrota>Bernina Express</h3>
-                <img  src="../assets/imag/bernina-rota.png" alt="bernina">
+                <h1 class= imgrota>Bernina Express</h1>
+                <img class="rotinhas" src="../assets/imag/bernina-rota.png" alt="bernina">
             </div>
    
         

@@ -16,9 +16,7 @@ main{
     background-color: #fff8ef;
     margin-right: 90px;
 }
-.lg{
-    
-}
+
 .red{
     padding-right: 500px;
 }
@@ -280,13 +278,22 @@ body {
 
 .imgrota{
     width: 100px;
-    height: 100px;
+    height: 90px;
     border-radius: 50%;
-    object-fit: cover;
 }
 
+.rotinhas{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    align-items: center;
+}
 
-
+.imgrotave{
+    width: 223px;
+    height: 94px;
+    border-radius: 30px;
+}
 
 
 
