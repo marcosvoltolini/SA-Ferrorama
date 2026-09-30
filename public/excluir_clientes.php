@@ -12,5 +12,5 @@ if (isset($_GET["id_usuario"])) {
     mysqli_stmt_close($stmt);
 }
 
-header("Location: ../index_admin.php");
+header("Location: ../Listar_clientes.php");
 exit();
