@@ -1,14 +1,19 @@
-# SA-Ferrorama
+                                                             * SA FERRORAMA *
 - Projeto SA do ferrorama
     O sistema tem como objetivo monitorar informações de trens como velocidade, rota, carga máxima de passageiros e horários em tempo real através de sensores.
 
-- Tecnologias utilizadas
+                                                             * Técnologias Utilizadas *
 
-    - Frontend: HTML, CSS, JS
-    - Backend (planejado): PHP com XAMPP
-    - Banco de Dados(planejado): MySQL
-    
+- O projeto será desenvolvido utilizando as seguintes tecnologias:
 
+    PHP — Desenvolvimento do sistema e funcionalidades do backend;
+    MySQL — Armazenamento e gerenciamento do banco de dados;
+    HTML — Estrutura das páginas;
+    CSS — Estilização e personalização da interface;
+    JavaScript — Interatividade e funcionalidades do sistema;
+    Bootstrap — Desenvolvimento e estilização da interface;
+    XAMPP — Ambiente de desenvolvimento local;
+    Git e GitHub — Versionamento e colaboração da equipe.
 
                                                              * Identidade visual *
 
@@ -78,7 +83,7 @@
 
 
 
-                                                                * Considerações Finais *
+                                                        * Considerações Finais *
 
     O desenvolvimento do SA-Ferrorama possibilita à equipe colocar em prática conhecimentos relacionados à programação web, PHP, banco de dados, criação de interfaces, documentação de sistemas, controle de versões e trabalho em equipe.
 
