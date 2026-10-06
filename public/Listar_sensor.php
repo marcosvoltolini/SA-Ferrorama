@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/verifica_admin.php";
 ?>
 <html lang="en">
 
