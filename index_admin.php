@@ -34,10 +34,10 @@ if (!$eh_admin){
             <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
             <a id="lk" href="public/Horario_trem.php">Horários</a>
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
+            <a id="lk" href="public/Listar_sensor.php">Ver sensores</a>
             <a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a>
             <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
             <a id="lk" href="public/cadastro_trem.php">Cadastrar Trem</a>
-            <a id="lk" href="public/cadastro_sensor.php">Cadastrar Sensor</a>
         </nav>
     </header>
 

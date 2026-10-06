@@ -51,6 +51,8 @@
                             <ol>Dashboard 6</ol>
                         </div>
                     </div>
+
+                       <a id="lk" href="public/cadastro-sensor.php">Cadastrar Sensor</a>
                 </div>
             </div>
             

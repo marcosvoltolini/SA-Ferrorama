@@ -49,18 +49,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <img id="icon" src="../assets/imag/person2.webp" alt="Person">
                     </div>
 
-                    <div class="board">
-                        <div class="dsh">
-                            <ol>Dashboard 1</ol>
-                        </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Sensores</title>
+</head>
+<body>
+ 
+<h2>Cadastro de Sensores</h2>
 
-                        <div class="dsh">
-                            <ol>Dashboard 2</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard 3</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard
+<label>Nome do Sensor:</label><br>
+<input type="text" name="nome" required><br><br>
+ 
+<label>Tipo:</label><br>
+<input type="text" name="tipo" required><br><br>
+ 
+<label>Localização:</label><br>
+<input type="text" name="localizacao" required><br><br>
+ 
+<button type="submit">Cadastrar</button>
+</form>
+ 
+</body>
