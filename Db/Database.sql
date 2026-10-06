@@ -13,7 +13,7 @@ CREATE TABLE usuarios (
 
 
 INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, tipo_usuario)
-VALUES ('Marcos Voltolini', 'Marcos_Voltolini@gmail.com', 'Volto09876', 'administrador');
+VALUES ('Marcos Voltolini', 'Marcos_Voltolini@gmail.com', '$2y$10$9hyJKMzZRZ29RMvOmi9N7uiv61wI9Mqd6ubEK1EcIamyZ5yBZYNTO', 'administrador');
  
  USE SA_Ferrorama;
 
