@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $senha = $_POST["senha_usuario"] ?? "";
     $senha_confirma = $_POST["senha_confirma"] ?? "";
     $tipo_enviado = $_POST["tipo_usuario"] ?? "comum";
-    $tipo = in_array($tipo_enviado, ["comum", "administrador"], true) ? $tipo_enviado : "comum";
+    $tipo = in_array($tipo_enviado, ["comum", "administrador", "funcionario"], true) ? $tipo_enviado : "comum";
 
     if ($nome === "" || $email === "" || $senha === "") {
         $erro = "Preencher todos os campos.";
@@ -104,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="tipo_usuario">Perfil</label>
                 <select id="tipo_usuario" name="tipo_usuario">
                     <option value="comum">Usuário comum</option>
+                    <option value="funcionario">funcionario</option>
                     <option value="administrador">Administrador</option>
                 </select>
 
