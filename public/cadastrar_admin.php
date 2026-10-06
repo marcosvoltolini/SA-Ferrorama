@@ -104,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="tipo_usuario">Perfil</label>
                 <select id="tipo_usuario" name="tipo_usuario">
                     <option value="comum">Usuário comum</option>
+                    <option value="administrador">funcionario</option>
                     <option value="administrador">Administrador</option>
                 </select>
 
