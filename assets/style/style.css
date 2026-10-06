@@ -297,12 +297,22 @@ body {
 }
 
 
+.visu{
+    background-color: #b47474;
+    align-items: last baseline;
+    flex-direction: column;
+    padding: 20px;
+     margin: 20px;
+     border-radius: 15px;
+}
 
 
-
-
-
-
+.tvusi{
+    background-color: #eca6a6;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+}
 
 
 

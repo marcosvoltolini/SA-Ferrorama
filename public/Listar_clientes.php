@@ -1,36 +1,48 @@
 <?php
-require_once __DIR__ . "/verifica_admin.php";
-require_once __DIR__ . "/../infra/conexao.php";
+require "../infra/conexao.php";
+require_once __DIR__ . "/verifica_funcionario.php";
 
-$erro = "";
-$sucesso = "";
+$sql = "SELECT * FROM usuarios";
+
+$resultado = mysqli_query($conexao, $sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de clientes - Red Rush!</title>
-    <link rel="stylesheet" href="../assets/style/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>lista de usuarios</title>
 </head>
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 <body>
-    <header>
-        <nav class="nave">
-            <div class="lg">
-                <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
-            </div>
-            <div class="red">
-                <h1 id="hs">Red Rush</h1>
-            </div>
-        </nav>
-        <nav class="navs">
-            <a id="lk" href="Rota_trem.php">Rota dos trens</a>
-            <a id="lk" href="Horario_trem.php">Horários</a>
-            <a id="lk" href="Listar_trens.php">Ver trens</a>
-            <a id="lk" href="login.php">Fazer Login</a>
-        </nav>
-    </header>
+
+<h1>Lista de usuarios</h1>
+
+<a href="cadastrar_usuario.php">Cadastrar novo usuario</a>
+<br><br>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>email</th>
+        <th>senha</th>
+        <th>Ações</th>
+    </tr>
+
+    <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
+        <tr>
+            <td><?php echo $linha["id_usuario"]; ?></td>
+            <td><?php echo $linha["nome_usuario"]; ?></td>
+            <td><?php echo $linha["email_usuario"]; ?></td>
+            <td><?php echo $linha["senha_usuario"]; ?></td>
+            <td>
+                <a href="excluir_clientes.php?id=<?php echo $linha['id_usuario']; ?>" 
+                    onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+            </td>
+        </tr>
+    <?php } ?>
+
+</table>
+
+</body>
+</html>

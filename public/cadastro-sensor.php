@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . "/../infra/conexao.php";
+require_once __DIR__ . "/verifica_admin.php";
+require_once __DIR__ . "/verifica_funcionario.php";
 $mensagem = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
