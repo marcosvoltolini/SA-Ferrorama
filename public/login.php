@@ -37,10 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["tipo_usuario"] = $usuario["tipo_usuario"];
 
             if ($usuario["tipo_usuario"] === "administrador") {
-                header("Location: ../index_admin.php");
+                header("Location: ../dashboard_admin.php");
+            }elseif ($usuario["tipo_usuario"] === "funcionario") {
+                header("Location: ../dasboard_funcionario.php");
             } else {
                 header("Location: ../index.php");
             }
+
+
             exit;
         } else {
             $erro = "Email ou senha inválidos.";
