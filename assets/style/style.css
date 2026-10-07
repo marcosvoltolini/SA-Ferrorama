@@ -4,7 +4,6 @@
    tons de vermelho + laranja claro, tipografia clássica.
    ========================================================= */
 
-<<<<<<< HEAD
 /* ---------- Variáveis ---------- */
 :root {
     --cream: #fff8ef;
@@ -22,15 +21,6 @@
     --radius-lg: 25px;
     --shadow: 0 4px 14px rgba(29, 11, 11, 0.18);
     --transition: 0.2s ease;
-=======
-/*Marcos*/
-
-
-
-
-main{
-    background-color: #fff8ef;
->>>>>>> 64212ea97dd8573551bbbf5a8f911929644aed84
 }
 
 /* ---------- Base ---------- */
@@ -94,7 +84,6 @@ img {
 }
 
 #hs {
-    color: var(--wine);
     letter-spacing: 0.04em;
 }
 
