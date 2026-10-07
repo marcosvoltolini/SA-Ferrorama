@@ -40,7 +40,11 @@ if (!$eh_admin){
             <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
             <a id="lk" href="public/cadastro_trem.php">Cadastrar Trem</a>
             <a id="lk" href="public/cadastro_sensor.php">Cadastrar Sensor</a>
+<<<<<<< HEAD
 
+=======
+            <a id="lk" href="public/logout.php">logout</a>
+>>>>>>> 64212ea97dd8573551bbbf5a8f911929644aed84
         </nav>
     </header>
 
