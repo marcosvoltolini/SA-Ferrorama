@@ -17,8 +17,9 @@
     <header>
         <nav class="nave">
             <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
-            <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
-            <span id="burguer" class="material-icons">menu</span>
+            <div class="red">
+                <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
+            </div>
         </nav>
         <nav class="navs">
             <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
