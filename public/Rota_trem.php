@@ -21,7 +21,7 @@
             <span id="burguer" class="material-icons">menu</span>
         </nav>
         <nav class="navs">
-            <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
+            <a id="lk" href="public/Horario_trem.php">Horários</a>
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
         </nav>
     </header>
