@@ -15,7 +15,7 @@ if (!$eh_admin){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red Rush! - Admin</title>
-    <a id="lk" href="public/logout.php">logout</a>
+    <a class="lo" href="public/logout.php">logout</a>
     <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -32,19 +32,12 @@ if (!$eh_admin){
             </div>
         </nav>
         <nav class="navs">
-            <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
             <a id="lk" href="public/Horario_trem.php">Horários</a>
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
             <a id="lk" href="public/Listar_sensor.php">Ver sensores</a>
             <a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a>
             <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
-            <a id="lk" href="public/cadastro_trem.php">Cadastrar Trem</a>
-            <a id="lk" href="public/cadastro_sensor.php">Cadastrar Sensor</a>
-<<<<<<< HEAD
 
-=======
-            <a id="lk" href="public/logout.php">logout</a>
->>>>>>> 64212ea97dd8573551bbbf5a8f911929644aed84
         </nav>
     </header>
 

@@ -23,6 +23,8 @@
         <nav class="navs">
             <button class="botao"><a id="lk" href="public/Rota_trem.php">Rota dos trens</a></button>
             <button class="botao"><a id="lk" href="public/Horario_trem.php">Trens disponiveis</a></button>
+            <button class="botao"><a id="lk" href="public/cadastro_trem.php">Cadastrar Trem</a></button>
+
         </nav>
     </header>
 

@@ -65,7 +65,7 @@ require_once __DIR__ . "/verifica_admin.php";
                 <br>
 
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/imag/sensor_velocidade_hall.png" class="card-img-top" alt="Sensor Hall">
+                    <img class="card-img-top" src="assets/imag/sensorhall.png" alt="Sensor Hall">
                     <div class="card-body">
                         <p class="card-text">Sensor de velocidade hall</p>
                     </div>
