@@ -145,11 +145,11 @@ body {
 
 /*sensores Marcos*/
 .dash {
+    align-items: center;
     font-size: 25px;
     background-color: #b47474;
     border-radius: 20px;
     padding-bottom: 765px;
-    padding-right: 90px;
 }
 
 
@@ -158,6 +158,7 @@ body {
     height: 40px;
     margin-left: 165px;
 }
+
 .bmv{
     background-color: #fff8ef;
     border-radius: 5px;
@@ -211,7 +212,7 @@ body {
     margin-bottom: 20px;
 }
 .coisa {
-    margin-left: 70px;
+    align-items: center;
     margin-top: 50px;
 }
 .p {
