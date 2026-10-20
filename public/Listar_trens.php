@@ -1,68 +1,40 @@
-<?php
+<?php   
+require "../infra/conexao.php";
+require_once __DIR__ . "/verifica_acesso.php";
 
+$dwl = "SELECT * FROM trens";
+$resultado = mysqli_query($conexao, $sql);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Rush!</title>
-    <link rel="stylesheet" href="../assets/style/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Lista de trens</title>
 </head>
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<body>  
 
-<body>
-    <header>
-        <nav class="nave">
-            <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
-            <div class="red">
-                <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
-            </div>
-        </nav>
-        <nav class="navs">
-            <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
-            <button class="botao"><a id="lk" href="public/Horario_trem.php">Trens disponiveis</a></button>
-            <button class="botao"><a id="lk" href="public/Rota_trem.php">Rota dos trens</a></button>
-            <button class="botao"><a id="lk" href="public/Horario_trem.php">Horários</a></button>
-        </nav>
-    </header>
+<h1>Lista de trens</h1> 
 
-    <main>
-    <div class= "visu">
-            <div class= "visu">
-            <img  src="../assets/imag/jacobite.png" alt="jacobite">
-            <h2 class= tvusi>Jacobite</h2>
-            <h3 class= tvusi>Horário: 7:30 - 19:50</h3>
-                <h3 class= tvusi>Rota: Mallaig - Fort William</h3>
-    </div>
-            <div class= "visu">
-                <img src="../assets/imag/Rocky.png" alt="rocky">
-                <h2 class= tvusi>Rocky</h2>
-                <h3 class= tvusi>Horário: 8:00 - 20:10</h3>
-                <h3 class= tvusi>Rota: Vancouver - Jasper</h3>
-            </div>
+<a href ="cadastrar_trens.php">Cadstrar novo trem</a>
+<br><br>    
 
-            <div class= "visu">
-                <img src="../assets/imag/orient.png" alt="orinet">
-                <h2 class= tvusi>Venice Simplon-Orient-Express</h2>
-                <h3 class= tvusi>Horário: 9:20 - 22:30</h3>
-                <h3 class= tvusi>Rota: Paris - Stanbul</h3>
-            </div>
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>tipo</th>
+        <th>ações</th>
+        </tr>
 
-            <div class= "visu">
-                <img src="../assets/imag/bernina.png" alt="bernina">
-                <h2 class= tvusi>Bernina Express</h2>
-                <h3 class= tvusi>Horário: 7:20 - 19:30</h3>
-                <h3 class= tvusi>Rota: Geneva - Tirano</h3>
-            </div>
-        
-    </main>
-
-    <footer>
-
-    </footer>
-</body>
-
-</html>
+    <?php while ($linha = mysqli_fetch_assoc($resultado))  ?>
+    
+        <tr>
+            <td><?php echo $linha["id"]; ?></td>
+            <td><?php echo $linha["nome"]; ?></td>
+            <td><?php echo $linha["tipo"]; ?></td>
+            <td>
+                <a href="excluir_trens.php?id=<?php echo $linha['id']; ?>" 
+                    onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+            </td>
+        </tr>
