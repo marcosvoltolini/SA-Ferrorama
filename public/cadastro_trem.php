@@ -2,39 +2,67 @@
 require_once __DIR__ . "/../infra/conexao.php";
 require_once __DIR__ . "/verifica_acesso.php";
 
+$tipos = ['Carga', 'Passageiro'];
 
-$mensagem = '';
+$nome = '';
+$tipo = '';
+$erro = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = trim($_POST['nome'] ?? '');
-    $tipo = intval($_POST['tipo'] ?? 0);
+    $tipo = $_POST['tipo'] ?? '';
 
-    if ($nome === '' || $tipo === 0) {
-        $mensagem = '<p style="color:red;">Preencha o nome/código e selecione um tipo de trem.</p>';
+    if ($nome === '' || $tipo === '') {
+        $erro = 'Preencha o nome e selecione um tipo de trem.';
+    } elseif (mb_strlen($nome) > 100) {
+        $erro = 'O nome deve ter no máximo 100 caracteres.';
+    } elseif (!in_array($tipo, $tipos, true)) {
+        $erro = 'Selecione um tipo de trem válido.';
     } else {
-        $stmt = $conn->prepare("INSERT INTO trens (nome, tipo) VALUES (?, ?)");
-        $stmt->bind_param("si", $nome, $tipo);
+        try {
+            $check = $conexao->prepare("SELECT 1 FROM trens WHERE nome = ? LIMIT 1");
+            $check->bind_param("s", $nome);
+            $check->execute();
+            $check->store_result();
+            $existe = $check->num_rows > 0;
+            $check->close();
 
-        if ($stmt->execute()) {
-            $mensagem = '<p style="color:green;">Trem cadastrado com sucesso!</p>';
-        } else {
-            $mensagem = '<p style="color:red;">Erro ao cadastrar trem: ' . htmlspecialchars($stmt->error) . '</p>';
+            if ($existe) {
+                $erro = 'Já existe um trem com esse nome.';
+            } else {
+                $stmt = $conexao->prepare("INSERT INTO trens (nome, tipo) VALUES (?, ?)");
+                $stmt->bind_param("ss", $nome, $tipo);
+                $stmt->execute();
+                $stmt->close();
+
+                $_SESSION['flash_sucesso'] = 'Trem cadastrado com sucesso!';
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit;
+            }
+        } catch (mysqli_sql_exception $e) {
+            if ((int) $e->getCode() === 1062) {
+                $erro = 'Já existe um trem com esse nome.';
+            } else {
+                error_log('Erro ao cadastrar trem: ' . $e->getMessage());
+                $erro = 'Não foi possível cadastrar o trem. Tente novamente.';
+            }
         }
-
-        $stmt->close();
     }
 }
+
+$sucesso = $_SESSION['flash_sucesso'] ?? '';
+unset($_SESSION['flash_sucesso']);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trens</title>
+    <title>Cadastro de trens</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style/style.css">
 </head>
 
 <body>
@@ -42,24 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <main>
         <div class="flex">
-            <div class="dash">
-                <div class="coisa">
-                    <div class="bmv">
-                        <h3>Bem vindo ADM </h3>
-                        <img id="icon" src="../assets/imag/person2.webp" alt="Person">
-                    </div>
-
-                    <div class="board">
-                        <div class="dsh"><ol>Dashboard 1</ol></div>
-                        <div class="dsh"><ol>Dashboard 2</ol></div>
-                        <div class="dsh"><ol>Dashboard 3</ol></div>
-                        <div class="dsh"><ol>Dashboard 4</ol></div>
-                        <div class="dsh5"><ol>Dashboard 5</ol></div>
-                        <div class="dsh"><ol>Dashboard 6</ol></div>
-                    </div>
-                </div>
-            </div>
-
             <div class="adn">
                 <div class="senso">
                     <h1>Cadastro de trens</h1>
@@ -68,17 +78,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="adicionar">
                     <h3 class="h">Adicionar novo trem</h3>
 
-                    <?= $mensagem ?>
+                    <?php if ($sucesso): ?>
+                        <div class="alert alert-success"><?= htmlspecialchars($sucesso) ?></div>
+                    <?php endif; ?>
+
+                    <?php if ($erro): ?>
+                        <div class="alert alert-danger"><?= htmlspecialchars($erro) ?></div>
+                    <?php endif; ?>
 
                     <form id="form" method="POST" action="">
-                        Nome/código do trem: <br>
-                        <input type="text" name="nome" id="nome" required> <br>
-                        Tipo de trem: <br>
+                        <label for="nome">Nome do trem:</label><br>
+                        <input type="text" name="nome" id="nome" maxlength="100"
+                               value="<?= htmlspecialchars($nome) ?>" required>
+                        <br>
+
+                        <label for="sel">Tipo de trem:</label><br>
                         <select class="sec" name="tipo" id="sel" required>
-                            <option value="0">Selecione</option>
-                            <option value="1">Carga</option>
-                            <option value="2">Passageiro</option>
-                        </select> <br><br>
+                            <option value="">Selecione</option>
+                            <?php foreach ($tipos as $t): ?>
+                                <option value="<?= htmlspecialchars($t) ?>" <?= $tipo === $t ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($t) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <br><br>
+
                         <button type="submit">Cadastrar</button>
                     </form>
                 </div>

@@ -25,8 +25,8 @@
         </nav>
         <nav class="navs">
 
-            <button class="botao"><a id="lk" href="public/Listar_trens.php">Ver trens</a>
-            <button class="botao"><a id="lk" href="public/login.php">Fazer Login</a>
+            <a id="lk" href="public/Listar_trens.php">Ver trens</a>
+            <a id="lk" href="public/login.php">Fazer Login</a>
         </nav>
     </header>
 
