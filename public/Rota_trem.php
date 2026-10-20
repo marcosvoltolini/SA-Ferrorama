@@ -23,6 +23,7 @@
         <nav class="navs">
             <a id="lk" href="../public/Horario_trem.php">Horários</a>
             <a id="lk" href="../public/Listar_trens.php">Ver trens</a>
+            <a id="lk" href="../public/adicionar_rota.php">Adicionar Rota</a>
         </nav>
     </header>
 
