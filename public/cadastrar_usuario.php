@@ -50,10 +50,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="style.css">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Administrador - Red Rush!</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<header>
+        <nav class="nave">
+            <div class="lg">
+                <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            </div>
+            <div class="red">
+                <h1 id="hs">Red Rush</h1>
+            </div>
+        </nav>
+    </header>
+
 <body>
     <div class="container-cadastro">
         <h2 id="log-cadastro">Criar Conta</h2>

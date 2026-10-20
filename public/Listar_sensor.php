@@ -52,6 +52,8 @@
                             <ol>Dashboard 6</ol>
                         </div>
                     </div>
+
+                       <a id="lk" href="cadastro-sensor.php">Cadastrar Sensor</a>
                 </div>
             </div>
             
@@ -63,7 +65,7 @@
                 <br>
 
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/imag/sensor_velocidade_hall.png" class="card-img-top" alt="Sensor Hall">
+                    <img class="card-img-top" src="assets/imag/sensorhall.png" alt="Sensor Hall">
                     <div class="card-body">
                         <p class="card-text">Sensor de velocidade hall</p>
                     </div>
