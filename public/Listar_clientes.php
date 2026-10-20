@@ -1,6 +1,6 @@
 <?php
 require "../infra/conexao.php";
-require_once __DIR__ . "/verifica_funcionario.php";
+require_once __DIR__ . "/verifica_acesso.php";
 
 $sql = "SELECT * FROM usuarios";
 
