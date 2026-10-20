@@ -1,40 +1,45 @@
-<?php   
-require "../infra/conexao.php";
-require_once __DIR__ . "/verifica_acesso.php";
+<?php
+include 'conexao.php'; 
 
-$dwl = "SELECT * FROM trens";
-$resultado = mysqli_query($conexao, $sql);
+$sql = "SELECT * FROM trens"; 
+$resultado = mysqli_query($conn, $sql);
+
+if (!$resultado) {
+    die("Erro na consulta: " . mysqli_error($conn));
+}
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de trens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Trens</title>
 </head>
-<body>  
+<body>
+    <h1>Lista de Trens</h1>
 
-<h1>Lista de trens</h1> 
-
-<a href ="cadastrar_trens.php">Cadstrar novo trem</a>
-<br><br>    
-
-<table border="1" cellpadding="8">
-    <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>tipo</th>
-        <th>ações</th>
-        </tr>
-
-    <?php while ($linha = mysqli_fetch_assoc($resultado))  ?>
-    
-        <tr>
-            <td><?php echo $linha["id"]; ?></td>
-            <td><?php echo $linha["nome"]; ?></td>
-            <td><?php echo $linha["tipo"]; ?></td>
-            <td>
-                <a href="excluir_trens.php?id=<?php echo $linha['id']; ?>" 
-                    onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
-            </td>
-        </tr>
+    <?php if (mysqli_num_rows($resultado) > 0): ?>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Modelo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($trem = mysqli_fetch_assoc($resultado)): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($trem['id']) ?></td>        
+                        <td><?= htmlspecialchars($trem['nome']) ?></td>      
+                        <td><?= htmlspecialchars($trem['modelo']) ?></td>    
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Nenhum trem cadastrado.</p>
+    <?php endif; ?>
+</body>
+</html>
+<?php mysqli_close($conn); ?>
