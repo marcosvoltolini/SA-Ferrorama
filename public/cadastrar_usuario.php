@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../infra/conexao.php";
-
+require_once __DIR__ . "/verifica_acesso.php";
 $erro = "";
 $sucesso = "";
 
