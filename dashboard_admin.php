@@ -32,7 +32,6 @@ if (!$eh_admin){
             </div>
         </nav>
         <nav class="navs">
-            <a id="lk" href="public/Horario_trem.php">Horários</a>
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
             <a id="lk" href="public/Listar_sensor.php">Ver sensores</a>
             <a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a>
