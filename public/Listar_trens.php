@@ -1,19 +1,22 @@
 <?php
+include 'conexao.php'; 
 
+$sql = "SELECT * FROM trens"; 
+$resultado = mysqli_query($conn, $sql);
+
+if (!$resultado) {
+    die("Erro na consulta: " . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Rush!</title>
-    <link rel="stylesheet" href="../assets/style/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Listar Trens</title>
 </head>
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 <body>
+<<<<<<< HEAD
     <header>
         <nav class="nave">
             <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
@@ -22,52 +25,38 @@
             </div>
         </nav>
         <nav class="navs">
-<<<<<<< HEAD
-            <button class="botao"><a id="lk" href="public/Rota_trem.php">Rota dos trens</a></button>
-            <button class="botao"><a id="lk" href="public/Horario_trem.php">Trens disponiveis</a></button>
-            <button class="botao"><a id="lk" href="public/cadastro_trem.php">Cadastrar Trem</a></button>
-
-=======
-            <a id="lk" href="public/Rota_trem.php">Rota dos trens</a>
-            <a id="lk" href="public/Horario_trem.php">Horários</a>
->>>>>>> dd82d6d56ff4940656bea61fc9f6b1125e422c22
+            <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
+            <button class="botao"><a id="lk" href="Horario_trem.php">Trens disponiveis</a></button>
+            <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
+            <button class="botao"><a id="lk" href="Horario_trem.php">Horários</a></button>
         </nav>
     </header>
+=======
+    <h1>Lista de Trens</h1>
+>>>>>>> 19008948589c6f0eb2ea8f9755c9fcc047854043
 
-    <main>
-    <div class= "visu">
-            <div class= "visu">
-            <img  src="../assets/imag/jacobite.png" alt="jacobite">
-            <h2 class= tvusi>Jacobite</h2>
-            <h3 class= tvusi>Horário: 7:30 - 19:50</h3>
-                <h3 class= tvusi>Rota: Mallaig - Fort William</h3>
-    </div>
-            <div class= "visu">
-                <img src="../assets/imag/Rocky.png" alt="rocky">
-                <h2 class= tvusi>Rocky</h2>
-                <h3 class= tvusi>Horário: 8:00 - 20:10</h3>
-                <h3 class= tvusi>Rota: Vancouver - Jasper</h3>
-            </div>
-
-            <div class= "visu">
-                <img src="../assets/imag/orient.png" alt="orinet">
-                <h2 class= tvusi>Venice Simplon-Orient-Express</h2>
-                <h3 class= tvusi>Horário: 9:20 - 22:30</h3>
-                <h3 class= tvusi>Rota: Paris - Stanbul</h3>
-            </div>
-
-            <div class= "visu">
-                <img src="../assets/imag/bernina.png" alt="bernina">
-                <h2 class= tvusi>Bernina Express</h2>
-                <h3 class= tvusi>Horário: 7:20 - 19:30</h3>
-                <h3 class= tvusi>Rota: Geneva - Tirano</h3>
-            </div>
-        
-    </main>
-
-    <footer>
-
-    </footer>
+    <?php if (mysqli_num_rows($resultado) > 0): ?>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Modelo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($trem = mysqli_fetch_assoc($resultado)): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($trem['id']) ?></td>        
+                        <td><?= htmlspecialchars($trem['nome']) ?></td>      
+                        <td><?= htmlspecialchars($trem['modelo']) ?></td>    
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Nenhum trem cadastrado.</p>
+    <?php endif; ?>
 </body>
-
 </html>
+<?php mysqli_close($conn); ?>

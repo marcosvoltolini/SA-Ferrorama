@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/verifica_admin.php";
+
 ?>
 <html lang="en">
 
@@ -53,7 +53,7 @@ require_once __DIR__ . "/verifica_admin.php";
                         </div>
                     </div>
 
-                       <a id="lk" href="public/cadastro-sensor.php">Cadastrar Sensor</a>
+                       <a id="lk" href="cadastro-sensor.php">Cadastrar Sensor</a>
                 </div>
             </div>
             
