@@ -23,29 +23,30 @@
         <nav class="navs">
             <a id="lk" href="../public/Horario_trem.php">Horários</a>
             <a id="lk" href="../public/Listar_trens.php">Ver trens</a>
+            <a id="lk" href="../public/adicionar_rota.php">Adicionar Rota</a>
         </nav>
     </header>
 
     <main>
     <div class= "bensgrand">
-            <div class= "bens">
+            <div class= "visu">
             <img  src="../assets/imag/jacobite.png" alt="jacobite">
             <h1 class= imgrota>Jacobite</h1>
             <img class="rotinhas" src="../assets/imag/jacobite-rota.png" alt="jacobite">
     </div>
-            <div class= "bens">
+            <div class= "visu">
                 <img src="../assets/imag/Rocky.png" alt="rocky">
                 <h1 class= imgrota>Rocky</h1>
                 <img class="rotinhas" src="../assets/imag/Rocky_Mountaineer_Routes.png" alt="rocky">
             </div>
 
-            <div class= bens>
+            <div class= visu>
                 <img src="../assets/imag/orient.png" alt="orinet">
                 <h1 class= imgrotave> Venice Simplon-Orient-Express </h1>
                 <img class="rotinhas" src="../assets/imag/venice rota.png" alt="orinet">
             </div>
 
-            <div class= "bens">
+            <div class= "visu">
                 <img src="../assets/imag/bernina.png" alt="bernina">
                 <h1 class= imgrota>Bernina Express</h1>
                 <img class="rotinhas" src="../assets/imag/bernina-rota.png" alt="bernina">

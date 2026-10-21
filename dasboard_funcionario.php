@@ -36,7 +36,7 @@ if (!$eh_admin){
             <a id="lk" href="public/Listar_trens.php">Ver trens</a>
             <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
             <a id="lk" href="public/cadastro_trem.php">Cadastrar Trem</a>
-            <a id="lk" href="public/cadastro_sensor.php">Cadastrar Sensor</a>
+            <a id="lk" href="public/cadastrar_usuario.php">Cadastrar usuarios</a>
             <a id="lk" href="public/logout.php">logout</a>
         </nav>
     </header>
