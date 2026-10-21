@@ -69,8 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </nav>
         <nav class="navs">
             <a id="lk" href="Listar_clientes.php">Ver clientes cadastrados</a>
-            <a id="lk" href="login.php">Fazer Login</a>
-            <a id="lk" href="../index.php">Voltar para a página inicial</a>
+            <a id="lk" href="login.php">Voltar para o home</a>
         </nav>
     </header>
 
