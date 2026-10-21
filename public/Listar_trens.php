@@ -1,11 +1,11 @@
 <?php
-include 'conexao.php';
+include __DIR__ . '/../infra/conexao.php';
 
 $sql = "SELECT * FROM trens";
-$resultado = mysqli_query($conn, $sql);
+$resultado = mysqli_query($conexao, $sql);
 
 if (!$resultado) {
-    die("Erro na consulta: " . mysqli_error($conn));
+    die("Erro na consulta: " . mysqli_error($conexao));
 }
 ?>
 <!DOCTYPE html>
@@ -56,4 +56,4 @@ if (!$resultado) {
     <?php endif; ?>
 </body>
 </html>
-<?php mysqli_close($conn); ?>
+<?php mysqli_close($conexao); ?>
