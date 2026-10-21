@@ -1,21 +1,8 @@
+/*Marcos*/
 
-/* ---------- Variáveis ---------- */
-:root {
-    --cream: #fff8ef;
-    --rose: #b47474;
-    --wine: #920404;
-    --red: #b94040;
-    --pink: #dd9393;
-    --blush: #eca6a6;
-    --coral: #ec8888;
-    --ink: #1d0b0b;
+main{
 
-    --font-serif: 'Times New Roman', Times, serif;
-    --radius-sm: 8px;
-    --radius-md: 15px;
-    --radius-lg: 25px;
-    --shadow: 0 4px 14px rgba(29, 11, 11, 0.18);
-    --transition: 0.2s ease;
+    background-color: #fff8ef;
 }
 .bodi{
     background-color: #fff8ef;
@@ -31,23 +18,17 @@
     margin-right: 90px;
 }
 
+
 .red{
     padding-right: 500px;
 }
 
+
 #hs{
     color:#920404;
-}
-
-#hs {
-    letter-spacing: 0.04em;
-}
-
-#hs a {
-    color: inherit;
     text-decoration: none;
+    
 }
-
 .logo {
     width: 150px;
 }
@@ -93,6 +74,7 @@
     font-size: 30px;
 }
 
+
 .ck {
     font-size: 20px;
 }
@@ -101,6 +83,7 @@
     border-radius: 50px;
     opacity:0.7;
 }
+
 
 /*Home Marcos*/
 .material-icons{
@@ -120,6 +103,7 @@
     color: black;
     font-size: 30px;
 }
+<<<<<<< HEAD
 .lo{
     color: black;
     font-size: 30px;
@@ -132,6 +116,8 @@
     border-radius: 25px;
 }
 
+=======
+>>>>>>> 448775bde6644b2b86aad49997983287ba3f09fe
 body {
     background-color: #fff8ef;
     gap: 0%;
@@ -170,14 +156,17 @@ body {
     margin: 10px;
 }
 
+
 /*sensores Marcos*/
 .dash {
-    align-items: center;
     font-size: 25px;
     background-color: #b47474;
     border-radius: 20px;
     padding-bottom: 765px;
+    padding-right: 90px;
 }
+
+
 
 
 #icon {
@@ -185,7 +174,6 @@ body {
     height: 40px;
     margin-left: 165px;
 }
-
 .bmv{
     background-color: #fff8ef;
     border-radius: 5px;
@@ -209,8 +197,11 @@ body {
 }
 
 
+
+
 .adn {
     text-align: center;
+
 
 }
 #nome {
@@ -239,12 +230,13 @@ body {
     margin-bottom: 20px;
 }
 .coisa {
-    align-items: center;
+    margin-left: 70px;
     margin-top: 50px;
 }
 .p {
     font-size: 25px;
 }
+
 
 /*Ramon*/
 .bensgrand{
@@ -254,6 +246,7 @@ body {
   flex-direction: row;
   align-items: stretch;
 }
+
 
 .bens{
     display: flex;
@@ -267,6 +260,8 @@ body {
 }
 
 
+
+
 .fanfas{
     background-color: #eca6a6;
     border-radius: 10px;
@@ -274,7 +269,10 @@ body {
 }
 
 
+
+
 /* CSS reutilizado de marcos*/
+
 
 .formsss {
     border: solid 2px #b47474;
@@ -289,24 +287,31 @@ body {
 }
 
 
+
+
 .config {
     margin-left: 30px;
 
+
 }
+
 
 .adn {
     padding-left: 60px;
 }
+
 
 .sensor-card{
     width: 18rem;
     margin: 30px;
 }
 
+
 .card-img-top{
     height: 200px;
-    align-items: center;
+    object-fit: cover;
 }
+
 
 .btn-area{
     display: flex;
@@ -314,15 +319,18 @@ body {
     margin-top: 20px;
 }
 
+
 .botao{
     width: 50%;
 }
+
 
 .imgrota{
     width: 100px;
     height: 90px;
     border-radius: 50%;
 }
+
 
 .rotinhas{
     width: 300px;
@@ -331,11 +339,14 @@ body {
     align-items: center;
 }
 
+
 .imgrotave{
     width: 223px;
     height: 94px;
     border-radius: 30px;
 }
+
+
 
 
 .visu{
@@ -348,6 +359,8 @@ body {
 }
 
 
+
+
 .tvusi{
     background-color: #eca6a6;
     border-radius: 10px;
@@ -355,8 +368,3 @@ body {
     align-items: center;
 }
 
-
-
-
-
-/*Davi*/
