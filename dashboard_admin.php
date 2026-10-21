@@ -32,11 +32,10 @@ if (!$eh_admin){
             </div>
         </nav>
         <nav class="navs">
-            <a id="lk" href="public/Horario_trem.php">Horários</a>
-            <a id="lk" href="public/Listar_trens.php">Ver trens</a>
-            <a id="lk" href="public/Listar_sensor.php">Ver sensores</a>
-            <a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a>
-            <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
+            <button class="botao"><a id="lk" href="public/Listar_trens.php">Ver trens</a></button>
+            <button class="botao"><a id="lk" href="public/Listar_sensor.php">Ver sensores</a></button>
+            <button class="botao"><a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a></button>
+            <button class="botao"><a id="lk" href="public/Listar_clientes.php">Lista de clientes</a></button>
 
         </nav>
     </header>
