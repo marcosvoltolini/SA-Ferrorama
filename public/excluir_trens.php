@@ -9,7 +9,7 @@ if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM usuarios WHERE id_ = ?";
+$sql = "DELETE FROM trens WHERE id = ?";
 
 $stmt = mysqli_prepare($conexao, $sql);
 
