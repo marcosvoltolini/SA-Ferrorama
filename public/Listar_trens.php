@@ -16,7 +16,6 @@ if (!$resultado) {
     <title>Listar Trens</title>
 </head>
 <body>
-<<<<<<< HEAD
     <header>
         <nav class="nave">
             <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
@@ -31,9 +30,6 @@ if (!$resultado) {
             <button class="botao"><a id="lk" href="Horario_trem.php">Horários</a></button>
         </nav>
     </header>
-=======
-    <h1>Lista de Trens</h1>
->>>>>>> 19008948589c6f0eb2ea8f9755c9fcc047854043
 
     <?php if (mysqli_num_rows($resultado) > 0): ?>
         <table border="1" cellpadding="8" cellspacing="0">
