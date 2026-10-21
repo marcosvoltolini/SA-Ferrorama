@@ -36,24 +36,29 @@ if (!$resultado) {
     <h2>Lista de Trens</h2>
 
     <?php if (mysqli_num_rows($resultado) > 0): ?>
-        <table border="1" cellpadding="8" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Modelo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($trem = mysqli_fetch_assoc($resultado)): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($trem['id']) ?></td>
-                        <td><?= htmlspecialchars($trem['nome']) ?></td>
-                        <td><?= htmlspecialchars($trem['tipo']) ?></td>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+        <table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Ações</th>
+    </tr>
+
+    <?php while ($linha = mysqli_fetch_assoc($resultado)) { ?>
+        <tr>
+            <td><?php echo $linha["id"]; ?></td>
+            <td><?php echo $linha["nome"]; ?></td>
+            <td><?php echo $linha["tipo"]; ?></td>
+            <td>
+                <a href="editar_trens.php?id=<?php echo $linha['id']; ?>">Editar</a>
+                <a href="excluir_trens.php?id=<?php echo $linha['id']; ?>" 
+                    onclick="return confirm('Tem certeza que deseja excluir?')">Excluir
+                </a>
+            </td>
+        </tr>
+    <?php } ?>
+
+</table>
     <?php else: ?>
         <p>Nenhum trem cadastrado.</p>
     <?php endif; ?>
