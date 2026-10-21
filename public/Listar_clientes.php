@@ -12,15 +12,32 @@ $resultado = mysqli_query($conexao, $sql);
 <head>
     <meta charset="UTF-8">
     <title>lista de usuarios</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
+<header>
+        <nav class="nave">
+            <div class="lg">
+            <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            </div>
+            <div class="red">
+            <h1 id="hs">Red Rush</h1>
+            </div>
+        </nav>
+        <nav class="navs">
+            <a id="lk" href="cadastrar_usuario.php">Cadastrar novo cliente</a>
+            <a id="lk" href="login.php">Fazer Login</a>
+            <a id="lk" href="../index.php">Voltar para a página inicial</a>
+        </nav>
+    </header>
 <body>
 
 <h1>Lista de usuarios</h1>
 
-<a href="cadastrar_usuario.php">Cadastrar novo usuario</a>
-<br><br>
 
-<table border="1" cellpadding="8">
+
+<table border="1">
     <tr>
         <th>ID</th>
         <th>Nome</th>

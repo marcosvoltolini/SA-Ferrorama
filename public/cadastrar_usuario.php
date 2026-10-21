@@ -61,11 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <header>
         <nav class="nave">
             <div class="lg">
-                <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
             </div>
             <div class="red">
-                <h1 id="hs">Red Rush</h1>
+            <h1 id="hs">Red Rush</h1>
             </div>
+        </nav>
+        <nav class="navs">
+            <a id="lk" href="Listar_clientes.php">Ver clientes cadastrados</a>
+            <a id="lk" href="login.php">Fazer Login</a>
+            <a id="lk" href="../index.php">Voltar para a página inicial</a>
         </nav>
     </header>
 
