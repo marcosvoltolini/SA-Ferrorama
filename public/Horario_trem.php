@@ -21,10 +21,15 @@
             <span id="burguer" class="material-icons">menu</span>
         </nav>
         <nav class="navs">
+<<<<<<< HEAD
+            <button class="botao"><a id="lk" href="../public/Rota_trem.php">Rota dos trens</a></button>
+            <button class="botao"><a id="lk" href="../public/Listar_trens.php">Ver trens</a></button>
+=======
             <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
             <button class="botao"><a id="lk" href="Horario_trem.php">Trens disponiveis</a></button>
             <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
             <button class="botao"><a id="lk" href="Listar_trens.php">Ver trens</a></button>
+>>>>>>> 448775bde6644b2b86aad49997983287ba3f09fe
         </nav>
     </header>
 

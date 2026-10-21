@@ -15,67 +15,41 @@
 
 <body>
     <header>
-
+        <nav class="nave">
+            <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
+            <span id="burguer" class="material-icons">menu</span>
+        </nav>
+        </nav>
     </header>
 
     <main>
-        <div class="flex">
-            <div class="dash">
-                <div class="coisa">
-                    <div class="bmv">
-                        <h3>Bem vindo ADM </h3>
-                        <img id="icon" src="../assets/imag/person2.webp" alt="Person">
-                    </div>
-
-                    <div class="board">
-                        <div class="dsh5">
-                            <ol>Dashboard 1</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard 2</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard 3</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard 4</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard 5</ol>
-                        </div>
-
-                        <div class="dsh">
-                            <ol>Dashboard 6</ol>
-                        </div>
-                    </div>
-
-                       <a id="lk" href="cadastro-sensor.php">Cadastrar Sensor</a>
-                </div>
+        <div class= "visu">
+            <div class= "visu">
+            <img  src="../assets/imag/jacobite.png" alt="jacobite">
+            <h2 class= tvusi>Jacobite</h2>
+            <h3 class= tvusi>Horário: 7:30 - 19:50</h3>
+                <h3 class= tvusi>Rota: Mallaig - Fort William</h3>
+    </div>
+            <div class= "visu">
+                <img src="../assets/imag/Rocky.png" alt="rocky">
+                <h2 class= tvusi>Rocky</h2>
+                <h3 class= tvusi>Horário: 8:00 - 20:10</h3>
+                <h3 class= tvusi>Rota: Vancouver - Jasper</h3>
             </div>
-            
-            <div class="adn">
-                 <div class="senso">
-                    <h1>visualização de Sensores</h1> <br>
-                    <h4>Velocidade</h4>
-                </div>
-                <br>
 
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="assets/imag/sensorhall.png" alt="Sensor Hall">
-                    <div class="card-body">
-                        <p class="card-text">Sensor de velocidade hall</p>
-                    </div>
-                </div>
-                <br>
+            <div class= "visu">
+                <img src="../assets/imag/orient.png" alt="orinet">
+                <h2 class= tvusi>Venice Simplon-Orient-Express</h2>
+                <h3 class= tvusi>Horário: 9:20 - 22:30</h3>
+                <h3 class= tvusi>Rota: Paris - Stanbul</h3>
+            </div>
 
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="button">Freios</button>
-                    
-                </div>
+            <div class= "visu">
+                <img src="../assets/imag/bernina.png" alt="bernina">
+                <h2 class= tvusi>Bernina Express</h2>
+                <h3 class= tvusi>Horário: 7:20 - 19:30</h3>
+                <h3 class= tvusi>Rota: Geneva - Tirano</h3>
             </div>
     </main>
 
