@@ -66,14 +66,23 @@ unset($_SESSION['flash_sucesso']);
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <nav class="nave">
+            <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+            <div class="red">
+                <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
+            </div>
+        </nav>
+        <nav class="navs">
+            <button class="botao"><a id="lk" href="Listar_trens.php">Ver trens</a></button>
+
+        </nav>
+    </header>
 
     <main>
         <div class="flex">
             <div class="adn">
-                <div class="senso">
-                    <h1>Cadastro de trens</h1>
-                </div>
+                
 
                 <div class="adicionar">
                     <h3 class="h">Adicionar novo trem</h3>
