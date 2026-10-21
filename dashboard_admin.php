@@ -32,17 +32,10 @@ if (!$eh_admin){
             </div>
         </nav>
         <nav class="navs">
-<<<<<<< HEAD
             <button class="botao"><a id="lk" href="public/Listar_trens.php">Ver trens</a></button>
             <button class="botao"><a id="lk" href="public/Listar_sensor.php">Ver sensores</a></button>
             <button class="botao"><a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a></button>
             <button class="botao"><a id="lk" href="public/Listar_clientes.php">Lista de clientes</a></button>
-=======
-            <a id="lk" href="public/Listar_trens.php">Ver trens</a>
-            <a id="lk" href="public/Listar_sensor.php">Ver sensores</a>
-            <a id="lk" href="public/cadastrar_admin.php">Cadastrar Admin</a>
-            <a id="lk" href="public/Listar_clientes.php">Lista de clientes</a>
->>>>>>> 448775bde6644b2b86aad49997983287ba3f09fe
 
         </nav>
     </header>

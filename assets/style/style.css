@@ -26,8 +26,6 @@ main{
 
 #hs{
     color:#920404;
-    text-decoration: none;
-    
 }
 .logo {
     width: 150px;
@@ -103,38 +101,20 @@ main{
     color: black;
     font-size: 30px;
 }
-<<<<<<< HEAD
-.lo{
-    color: black;
-    font-size: 30px;
-
-    margin-left: 82%;
-    margin-top: -20px; /* sobe o botão */
-
-    border: 4px solid #920404;
-    background-color: #920404;
-    border-radius: 25px;
-}
-
-=======
->>>>>>> 448775bde6644b2b86aad49997983287ba3f09fe
 body {
     background-color: #fff8ef;
     gap: 0%;
     margin: 0%;
 }
-
 .trem {
     width: 500px;
     margin-top: 340px;
 }
-
 .bem {
     display:flex;
     text-align: center;
     align-items: center;
 }
-
 #bvd {
    align-items: center;
     margin-left: 13%;
@@ -145,7 +125,6 @@ body {
     font-family: 'Times New Roman', Times, serif;
     color:#fff8ef;
 }
-
 .botao{
     background-color: #dd9393;
     font-family: 'Times New Roman', Times, serif;

@@ -28,13 +28,8 @@ if (!$resultado) {
         <nav class="navs">
             <button class="botao"><a id="lk" href="cadastro_trem.php">Cadastrar trem</a></button>
             <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
-<<<<<<< HEAD
             <button class="botao"><a id="lk" href="Horario_trem.php">Trens disponiveis</a></button>
             <button class="botao"><a id="lk" href="Horario_trem.php">Horários</a></button>
-=======
-            <button class="botao"><a id="lk" href="Horario_trem.php">Horários</a></button>
-
->>>>>>> 448775bde6644b2b86aad49997983287ba3f09fe
         </nav>
     </header>
 

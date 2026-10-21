@@ -26,8 +26,8 @@ $resultado = mysqli_query($conexao, $sql);
             </div>
         </nav>
         <nav class="navs">
-            <a id="lk" href="cadastrar_usuario.php">Cadastrar novo cliente</a>
-            <a id="lk" href="login.php">Voltar para o home</a>
+            <button class="botao"><a id="lk" href="cadastrar_usuario.php">Cadastrar novo cliente</a></button>
+            <button class="botao"><a id="lk" href="login.php">Voltar para o home</a></button>
         </nav>
     </header>
 <body>

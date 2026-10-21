@@ -21,6 +21,9 @@
             <span id="burguer" class="material-icons">menu</span>
         </nav>
         </nav>
+        <nav class="navs">
+            <button class="botao"><a id="lk" href="login.php">Voltar para o home</a></button>
+        </nav>
     </header>
 
     <main>
