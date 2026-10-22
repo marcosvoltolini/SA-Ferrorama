@@ -41,7 +41,6 @@ $resultado = mysqli_query($conexao, $sql);
         <th>ID</th>
         <th>Nome</th>
         <th>email</th>
-        <th>senha</th>
         <th>Ações</th>
     </tr>
 
@@ -50,7 +49,6 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?php echo $linha["id_usuario"]; ?></td>
             <td><?php echo $linha["nome_usuario"]; ?></td>
             <td><?php echo $linha["email_usuario"]; ?></td>
-            <td><?php echo $linha["senha_usuario"]; ?></td>
             <td>
                 <a href="editar_clientes.php?id=<?php echo $linha['id_usuario']; ?>">Editar</a>
                 <a href="excluir_clientes.php?id=<?php echo $linha['id_usuario']; ?>" 

@@ -24,7 +24,6 @@
             </div>
         </nav>
         <nav class="navs">
-            <a id="lk" href="public/Listar_trens.php">Ver trens</a>
             <a id="lk" href="public/login.php">Fazer Login</a>
         </nav>
     </header>
