@@ -2,8 +2,12 @@
 session_start();
 
 if (isset($_SESSION["id_usuario"])) {
-    if (($_SESSION["tipo_usuario"] ?? "") === "administrador") {
+    $tipo = $_SESSION["tipo_usuario"] ?? "";
+
+    if ($tipo === "administrador") {
         header("Location: ../dashboard_admin.php");
+    } elseif ($tipo === "funcionario") {
+        header("Location: ../dashboard_funcionario.php");
     } else {
         header("Location: ../index.php");
     }
@@ -32,19 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->close();
 
         if ($usuario && password_verify($senha, $usuario["senha_usuario"])) {
+            session_regenerate_id(true); 
+
             $_SESSION["id_usuario"] = $usuario["id_usuario"];
             $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
             $_SESSION["tipo_usuario"] = $usuario["tipo_usuario"];
 
             if ($usuario["tipo_usuario"] === "administrador") {
                 header("Location: ../dashboard_admin.php");
-            }elseif ($usuario["tipo_usuario"] === "funcionario") {
-                header("Location: ../dasboard_funcionario.php");
+            } elseif ($usuario["tipo_usuario"] === "funcionario") {
+                header("Location: ../dashboard_funcionario.php");
             } else {
                 header("Location: ../index.php");
             }
-
-
             exit;
         } else {
             $erro = "Email ou senha inválidos.";
@@ -52,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -66,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <header>
     <nav class="nave">
       <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
-      <h1>Red Rush</h1>
+      <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
       <img id="gif" src="../assets/imag/trem_gif.gif" alt="gif trem">
     </nav>
   </header>
