@@ -26,10 +26,9 @@ if (!$resultado) {
             </div>
         </nav>
         <nav class="navs">
-            <button class="botao"><a id="lk" href="cadastro_trem.php">Cadastrar trem</a></button>
-            <button class="botao"><a id="lk" href="Rota_trem.php">Rota dos trens</a></button>
-            <button class="botao"><a id="lk" href="Horario_trem.php">Trens disponiveis</a></button>
-            <button class="botao"><a id="lk" href="Horario_trem.php">Horários</a></button>
+            <a id="lk" href="cadastro_trem.php">Cadastrar trem</a>
+            <a id="lk" href="Rota_trem.php">Rota dos trens</a>
+            <a id="lk" href="Horario_trem.php">Horários</a>
         </nav>
     </header>
 
