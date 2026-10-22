@@ -88,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <br>
         <input type="password" id="password" name="password" required>
         <br>
-        <a href="cadastrar_usuario.php">Cadastre-se</a>
         <br>
         <button id="bot" type="submit">Login</button>
       </form>

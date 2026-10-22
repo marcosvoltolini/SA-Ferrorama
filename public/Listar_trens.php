@@ -12,6 +12,7 @@ if (!$resultado) {
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" href="../assets/style/style.css">
+    <a class="lo" href="public/logout.php">logout</a>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
