@@ -17,6 +17,7 @@ $resultado = mysqli_query($conexao, $sql);
 </head>
 
 <header>
+        <a class="lo" href="public/logout.php">logout</a>
         <nav class="nave">
             <div class="lg">
             <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
