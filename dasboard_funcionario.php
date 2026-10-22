@@ -13,6 +13,7 @@ if (!$eh_admin){
 
 <head>
     <meta charset="UTF-8">
+    <a class="lo" href="public/logout.php">logout</a>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red Rush! - Funcionario</title>
     <link rel="stylesheet" href="assets/style/style.css">
