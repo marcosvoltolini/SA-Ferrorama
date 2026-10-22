@@ -11,22 +11,37 @@
     São APIs que utilizam o protocolo HTTP para comunicação e normalmente trocam dados no formato JSON.
 
 ## Métodos HTTP
-    - GET: consultar dados;
-    - POST: criar dados;
-    - PUT: atualizar dados completamente;
-    - PATCH: atualizar parcialmente;
-    - DELETE: excluir dados.
-    - Requisições e Respostas HTTP
-    - Requisição: pedido enviado pelo cliente.
-    - Resposta: retorno da API com dados ou informações sobre o processamento.
+    # GET: consultar dados;
+        GET /clientes/1
+
+    # POST: criar dados;
+        POST /clientes
+
+    # PUT: atualizar dados completamente;
+        PUT /clientes/1
+
+    # PATCH: atualizar parcialmente;
+        PATCH /clientes/1
+
+    # DELETE: excluir dados.
+        DELETE /clientes/1
+
 
 ## Endpoints
 
     São os endereços (URLs) onde os recursos da API podem ser acessados.
+        /api/clientes
+        /api/produtos
+        /api/pedidos
 
 ## JSON
 
     É um formato leve e organizado para troca de dados entre sistemas.
+        {
+        "produto": "Notebook",
+        "preco": 3500,
+        "estoque": 15
+        }
 
 ## API x Sistema Web
 
@@ -38,7 +53,12 @@
 
 ## Segurança
 
-    O uso de autenticação, autorização e HTTPS é fundamental para proteger os dados e controlar os acessos.
+   A segurança é fundamental para proteger informações e controlar acessos. Os principais mecanismos são:
+
+        - Autenticação (identificação do usuário);
+        - Autorização (controle de permissões);
+        - Uso de HTTPS para criptografar a comunicação;
+        - Tokens de acesso, como JWT.
 
 ## Exemplos de Uso
     - Sistemas de pagamento (Pix, PayPal);
@@ -46,3 +66,10 @@
     - CRMs;
     - Sistemas de logística e rastreamento;
     - Aplicativos de integração empresarial.
+
+## Fontes Consultadas
+    - Mozilla Developer Network (MDN): https://developer.mozilla.org/
+    - REST API Tutorial: https://restfulapi.net/
+    - Documentação oficial JSON: https://www.json.org/json-pt.html
+    - Documentação HTTP - RFC 9110: https://www.rfc-editor.org/rfc/rfc9110
+    - PHP Documentation: https://www.php.net/docs.php
