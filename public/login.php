@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <header>
     <nav class="nave">
       <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
-      <h1>Red Rush</h1>
+                <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
       <img id="gif" src="../assets/imag/trem_gif.gif" alt="gif trem">
     </nav>
   </header>
