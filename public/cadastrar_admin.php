@@ -52,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a class="lo" href="public/logout.php">logout</a>
     <title>Cadastro de Administrador - Red Rush!</title>
     <link rel="stylesheet" href="../assets/style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

@@ -71,7 +71,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <header>
     <nav class="nave">
       <img class="logo" src="../assets/imag/Logo_red_rush.png" alt="Red Rush Logo">
+<<<<<<< HEAD
       <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
+=======
+                <h1 id="hs"><a href="../index.php">Red Rush</a></h1>
+>>>>>>> 55e8007e2b674d31c8244e9c0565cce0ad64a142
       <img id="gif" src="../assets/imag/trem_gif.gif" alt="gif trem">
     </nav>
   </header>
@@ -93,7 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <br>
         <input type="password" id="password" name="password" required>
         <br>
-        <a href="cadastrar_usuario.php">Cadastre-se</a>
         <br>
         <button id="bot" type="submit">Login</button>
       </form>
