@@ -29,6 +29,58 @@ if ($trem) {
     $stmt->execute();
     $rotas = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 }
+
+//clima
+
+$latitude = -26.3044;
+$longitude = -48.8487;
+
+$url = "https://api.open-meteo.com/v1/forecast?latitude=$latitude&longitude=$longitude&current=temperature_2m,weather_code&timezone=America%2FSao_Paulo";
+
+$resposta = @file_get_contents($url);
+
+$clima = null;
+$erro_clima = false;
+
+if ($resposta !== false) {
+
+    $dados_clima = json_decode($resposta, true);
+
+    if (isset($dados_clima["current"])) {
+
+        $clima = $dados_clima["current"];
+
+        $temperatura = $clima["temperature_2m"];
+        $codigo = $clima["weather_code"];
+        $horario = $clima["time"];
+
+        if ($codigo == 0) {
+            $condicao = "Céu limpo";
+        } elseif ($codigo <= 3) {
+            $condicao = "Parcialmente nublado";
+        } elseif ($codigo <= 48) {
+            $condicao = "Neblina";
+        } elseif ($codigo <= 67) {
+            $condicao = "Chuva";
+        } elseif ($codigo <= 77) {
+            $condicao = "Neve";
+        } elseif ($codigo <= 82) {
+            $condicao = "Pancadas de chuva";
+        } elseif ($codigo <= 86) {
+            $condicao = "Pancadas de neve";
+        } else {
+            $condicao = "Trovoadas";
+        }
+
+    } else {
+        $erro_clima = true;
+    }
+
+} else {
+    $erro_clima = true;
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -77,6 +129,36 @@ if ($trem) {
                 <?php } ?>
             <?php } ?>
         </div>
+
+        <div class="card-clima">
+
+            <h2>Clima atual</h2>
+
+            <?php if (!$erro_clima) { ?>
+
+                <div class="temperatura">
+                <?= $temperatura ?> °C
+                </div>
+
+                <p class="condicao">
+                    <?= htmlspecialchars($condicao) ?>
+                </p>
+
+                <p>📍 Joinville - SC</p>
+
+                <p class="atualizacao">
+                    Última atualização:
+                    <?= date("d/m/Y H:i", strtotime($horario)) ?>
+                </p>
+
+            <?php } else { ?>
+
+                <p>Não foi possível carregar as informações do clima.</p>
+
+            <?php } ?>
+
+        </div>
+
     </main>
 
     <footer>
