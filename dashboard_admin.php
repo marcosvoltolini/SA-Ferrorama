@@ -17,8 +17,7 @@ $sensores = $conexao->query("SELECT COUNT(*) FROM sensores")->fetch_row()[0];
 $usuarios = $conexao->query("SELECT COUNT(*) FROM usuarios")->fetch_row()[0];
 $sem_maquinista = $conexao->query("SELECT COUNT(*) FROM trens WHERE maquinista_id IS NULL")->fetch_row()[0];
 
-
-// API DE CLIMA - JOINVILLE/SC
+//clima
 
 $latitude = -26.3044;
 $longitude = -48.8487;
