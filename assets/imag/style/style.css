@@ -18,6 +18,37 @@ main{
     margin-right: 90px;
 }
 
+ .card-clima {
+            background: #f1a8a8;
+            color: #222;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 12px;
+            max-width: 400px;
+        text-align: center;
+            
+        }
+
+        .card-clima h2 {
+            margin-top: 0;
+        }
+
+        .temperatura {
+            font-size: 38px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .condicao {
+            font-size: 18px;
+        }
+
+        .atualizacao {
+            font-size: 13px;
+            color: #666;
+        }
+
+
 
 .red{
     padding-right: 500px;
