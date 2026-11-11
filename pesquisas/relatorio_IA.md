@@ -78,3 +78,11 @@ if ($dados && isset($dados['current'])) {
 }
 
 ?>"
+
+
+
+Outras ajudas da IA:
+
+Além da integração com a API e da criação do código PHP, o ChatGPT também auxiliou na parte visual do sistema, ajudando com o CSS, na organização dos elementos da tela inicial, nas cores, no espaçamento e na apresentação das informações meteorológicas.
+
+Resultado: A utilização da IA ajudou a compreender como funciona a integração de uma API externa com PHP, facilitando a implementação dos dados meteorológicos e a personalização visual da tela inicial do sistema.
