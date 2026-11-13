@@ -89,6 +89,7 @@ if ($resposta !== false) {
             <div class="red">
                 <h1 id="hs">Red Rush</h1>
             </div>
+            
         </nav>
 
         <nav class="navs">

@@ -759,21 +759,43 @@ form select {
 }
 
 /* ---------- CEP ---------- */
-/* ---------- Dashboard: ritmo e alinhamento ---------- */
 
-/* hero e resumo com a mesma largura dos dois cards */
-main:has(> .card-clima) > .bem {
-    margin-bottom: 24px;
+/* ---------- Dashboard: hero / resumo + clima / CEP ---------- */
+
+main:has(> .card-clima) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch; /* resumo e clima com a mesma altura */
 }
 
-main:has(> .card-clima) > .adn {
+/* hero e CEP ocupam a linha inteira */
+main:has(> .card-clima) > .bem,
+main:has(> .card-clima) > .cep-card {
+    grid-column: 1 / -1;
+}
+
+main:has(> .card-clima) > .bem {
+    margin-bottom: 0;
+}
+
+/* resumo e clima: mesma largura, sem limites herdados */
+main:has(> .card-clima) > .adn,
+main:has(> .card-clima) > .card-clima {
     width: 100%;
     max-width: none;
-    margin: 0 0 24px;
+    margin: 0;
 }
 
-/* ---------- Card do clima: conteúdo centralizado na altura ---------- */
+/* resumo: conteúdo centralizado na altura do card */
+main:has(> .card-clima) > .adn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 28px;
+}
 
+/* clima: conteúdo centralizado na altura do card */
 main:has(> .card-clima) > .card-clima {
     display: flex;
     flex-direction: column;
@@ -783,38 +805,18 @@ main:has(> .card-clima) > .card-clima {
     padding: 32px 28px;
 }
 
-.card-clima h2 {
-    font-size: 1.5rem;
+/* celular e tablet pequeno: tudo em uma coluna */
+@media (max-width: 860px) {
+    main:has(> .card-clima) {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
-.temperatura {
-    font-size: 5rem;
-    margin: 10px 0 0;
-}
 
-.condicao {
-    margin: 0 0 14px;
-    font-size: 1.4rem;
-}
-
-/* "📍 Joinville - SC" vira uma pílula */
-.card-clima p:not([class]) {
-    margin: 0;
-    padding: 6px 16px;
-    background-color: rgba(255, 248, 239, 0.6);
-    border-radius: 999px;
-    font-weight: 600;
-}
-
-.atualizacao {
-    margin-top: 14px;
-    font-size: 0.85rem;
-}
-
-/* ---------- Card do CEP ---------- */
+/* ---------- Card do CEP (largura total) ---------- */
 
 .cep-card {
-    padding: 32px 28px;
+    padding: 32px clamp(22px, 4vw, 40px) 36px;
     background-color: var(--surface);
     border: 1px solid var(--line);
     border-top: 6px solid var(--wine);
@@ -824,14 +826,19 @@ main:has(> .card-clima) > .card-clima {
 }
 
 .cep-card h2 {
-    margin: 0 0 20px;
+    margin: 0 0 22px;
     color: var(--wine);
     font-family: var(--font-display);
     font-size: 1.5rem;
     text-align: center;
 }
 
-/* campo do CEP + botão na mesma linha */
+/* CEP + botão na mesma linha, centralizados */
+.cep-busca {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
 .cep-linha {
     display: flex;
     gap: 10px;
@@ -846,39 +853,30 @@ main:has(> .card-clima) > .card-clima {
 .cep-linha button {
     width: auto;
     margin: 0;
-    padding: 0 22px;
+    padding: 0 26px;
     white-space: nowrap;
 }
 
-/* mensagem de retorno */
 #cep-msg {
     min-height: 24px;
-    margin: 8px 0 14px;
+    margin: 10px 0 18px;
     font-size: 0.9rem;
     font-weight: 600;
+    text-align: center;
 }
 
 #cep-msg.cep-erro { color: var(--wine); }
 #cep-msg.cep-ok   { color: #1d6b2f; }
 
-/* cidade (larga) + UF (estreito) na mesma linha */
-.cep-duas {
+/* resultado: logradouro, bairro, cidade e UF numa linha só */
+.cep-campos {
     display: grid;
-    grid-template-columns: 1fr 90px;
-    gap: 12px;
+    grid-template-columns: 2fr 1.2fr 1.2fr 90px;
+    gap: 14px;
 }
 
-.cep-duas input {
+.cep-campos input {
     margin-bottom: 0;
 }
 
-/* campos preenchidos pela API: aparência de resultado, não de formulário */
-.cep-card input[readonly] {
-    background-color: var(--cream);
-    border-color: transparent;
-    cursor: default;
-}
-
-.cep-card input[readonly]:focus {
-    box-shadow: none;
-}
+/* campos
