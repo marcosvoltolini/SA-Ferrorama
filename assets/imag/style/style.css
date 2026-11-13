@@ -203,7 +203,7 @@ header :focus-visible {
     padding: 8px 18px;
     border-radius: 999px;
     color: var(--cream);
-    font-size: 1rem;
+    font-size: 1.15rem;  
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -228,16 +228,18 @@ header::after {
 /* ---------- Mensagem de sessão (cabecalho.php) ---------- */
 
 header + p {
-    width: calc(100% - 40px);
-    max-width: 720px;
-    margin: 24px auto 0;
-    padding: 14px 20px;
+    width: fit-content;                    
+    max-width: calc(100% - 40px);          
+    margin: 20px auto 0;
+    padding: 8px 22px;                     
     background-color: var(--surface);
     border: 1px solid var(--line);
-    border-left: 6px solid currentColor;
+    border-left: 4px solid currentColor;   
     border-radius: 12px;
     box-shadow: var(--shadow);
+    font-size: 0.92rem;                   
     font-weight: 600;
+    text-align: center;                   
 }
 
 /* Vermelho/verde "puros" do inline não têm contraste no creme */
@@ -428,6 +430,7 @@ table {
     border-spacing: 0;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    font-size: 1.1rem;                
     font-variant-numeric: tabular-nums;
     overflow: hidden;
     text-align: left;
@@ -435,7 +438,7 @@ table {
 
 th,
 td {
-    padding: 14px 20px;
+    padding: 18px 28px;                
     border: 0;
     border-bottom: 1px solid var(--line);
     vertical-align: middle;
@@ -489,6 +492,7 @@ td form button:hover {
     color: var(--cream);
     filter: none;
 }
+
 
 
 /* ---------- Formulários ---------- */
