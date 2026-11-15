@@ -1,104 +1,98 @@
-# Red Rush — SA Ferrorama
+                                Red Rush - SA Ferrorama
 
-Sistema web para gerenciar uma operação ferroviária: **trens**, **rotas**, **horários**, **sensores** e as pessoas envolvidas (administradores, funcionários/maquinistas e clientes). Projeto da SA do curso técnico em Desenvolvimento de Sistemas.
+    Sistema web para gerenciar e acompanhar uma operação ferroviária inspirada no Ferrorama, o clássico ferromodelo brasileiro da Estrela. O projeto reúne trens, rotas, horários, sensores e as pessoas envolvidas (administradores, funcionários/maquinistas e clientes). Foi desenvolvido como Situação de Aprendizagem (SA) do curso técnico em Desenvolvimento de Sistemas.
 
-## Funcionalidades
 
-- Login com três perfis (administrador, funcionário e cliente), cada um com o seu painel.
-- CRUD completo de **trens**, **rotas**, **sensores** e **usuários**.
-- Cada trem pode ter **um maquinista** (um funcionário) associado.
-- Horários e mapas das rotas lidos do banco (a chegada é calculada: partida + duração).
+-   Problema que o sistema resolve
 
-## Quem pode fazer o quê
+    Sem um sistema central, as informações de uma operação ferroviária ficam espalhadas: quais trens existem, quem conduz cada um, quais rotas e horários cumprem e quais sensores monitoram cada trem. Isso dificulta o controle, gera inconsistências e deixa o cliente sem uma fonte confiável de horários e mapas.
 
-| Ação | Cliente | Funcionário | Administrador |
-|---|:---:|:---:|:---:|
-| Ver trens, rotas, horários e mapas | ✅ | ✅ | ✅ |
-| Cadastrar / editar trens, rotas e sensores | ❌ | ✅ | ✅ |
-| Ver lista de clientes e cadastrar clientes | ❌ | ✅ (só clientes) | ✅ (todos os perfis) |
-| **Excluir** trens, rotas e sensores | ❌ | ❌ | ✅ |
-| Editar / excluir usuários e mudar perfis | ❌ | ❌ | ✅ |
+    O Red Rush concentra esses dados em um banco único, com acesso controlado por perfil: quem opera cadastra e atualiza, e quem usa o serviço apenas consulta.
 
-A checagem é feita no servidor, no começo de cada página, pelos arquivos `verifica_login.php`, `verifica_acesso.php` (administrador e funcionário) e `verifica_admin.php` (só administrador).
 
-## Tecnologias
+-   Objetivos e principais funcionalidades
 
-PHP (mysqli) · MySQL/MariaDB · HTML · CSS (`assets/style/style.css`) · XAMPP · Git/GitHub
+    Objetivos: centralizar o cadastro da operação, controlar quem pode ver e alterar cada informação e disponibilizar horários e mapas de forma clara para o cliente.
 
-## Como rodar (XAMPP)
 
-1. Instale o [XAMPP](https://www.apachefriends.org/) e ligue **Apache** e **MySQL**.
-2. Copie esta pasta para `C:\xampp\htdocs\` (fica `htdocs\SA-Ferrorama`).
-3. Abra `http://localhost/phpmyadmin`, vá na aba **Importar**, escolha `Db/Database.sql` e clique em **Importar**.
-4. Se o seu MySQL tiver usuário ou senha diferentes de `root` / (vazia), edite `infra/conexao.php`.
-5. Acesse `http://localhost/SA-Ferrorama/`.
+-   Funcionalidades:
 
-O `Database.sql` **apaga e recria** o banco `SA_Ferrorama`. Se já existir um banco com esse nome, os dados dele serão perdidos.
+    - Login com três perfis (administrador, funcionário e cliente), cada um com o seu painel.
+    - CRUD completo de trens, rotas, sensores e usuários.
+    - Associação de um maquinista (funcionário) a cada trem.
+    - Consulta de horários e mapas das rotas, lidos do banco (a chegada é calculada: partida + duração).
+    - Integração com API de clima na tela inicial (temperatura, condição, localização e horário da consulta).
+    - Validação de CEP via API, com tratamento de CEP inválido, sem resultado e falha de comunicação.
+    - Tecnologias utilizadas
+    - PHP (mysqli)
+    - MySQL/MariaDB
+    - HTML
+    - CSS (assets/style/style.css)
+    - XAMPP
+    - Git/GitHub
 
-O banco começa sem trens, rotas ou sensores: cadastre pelo sistema. As imagens dos trens e dos mapas são escolhidas entre os arquivos da pasta `assets/imag`.
 
-### Senha do administrador inicial
+-   Requisitos para executar
 
-O `Database.sql` cria o admin `Marcos_Voltolini@gmail.com`. Para definir uma senha nova, gere o hash e atualize no banco:
+    - XAMPP com Apache e MySQL/MariaDB
+    - Navegador atualizado (Chrome, Edge ou Firefox)
+    - Acesso à internet, apenas para as integrações com APIs externas
+    - Git
+    - Instalação e configuração
+    - Instale o XAMPP e ligue Apache e MySQL no painel de controle.
 
-```
-C:\xampp\php\php.exe -r "echo password_hash('SuaNovaSenha', PASSWORD_DEFAULT);"
-```
 
-```sql
-UPDATE usuarios SET senha_usuario = 'COLE_O_HASH_AQUI' WHERE email_usuario = 'Marcos_Voltolini@gmail.com';
-```
+-   Baixe o projeto:
 
-Logado como administrador, use **Usuários > Cadastrar usuário** para criar funcionários (que podem ser maquinistas) e outros administradores.
+    - git clone https://github.com/marcosvoltolini/SA-Ferrorama.git
+    - Copie a pasta para C:\xampp\htdocs\, de modo que fique htdocs\SA-Ferrorama.
+    - Se o seu MySQL tiver usuário ou senha diferentes de root / (vazia), edite infra/conexao.php.
+        - Configuração e importação do banco de dados
+        - Abra http://localhost/phpmyadmin.
+        - Vá na aba Importar, escolha o arquivo Db/Database.sql e clique em Importar.
 
-## Banco de dados
+        * Atenção: o Database.sql apaga e recria o banco SA_Ferrorama. Se já existir um banco com esse nome, os dados dele serão perdidos.
 
-```mermaid
-erDiagram
-    usuarios ||--o| trens : "conduz (maquinista)"
-    trens ||--o{ rotas : "possui"
-    trens ||--o{ sensores : "possui"
+    - O banco começa sem trens, rotas ou sensores: cadastre pelo sistema. As imagens dos trens e dos mapas são escolhidas entre os arquivos da pasta assets/imag.
 
-    usuarios {
-        int id_usuario PK
-        string nome_usuario
-        string email_usuario UK
-        string senha_usuario
-        enum tipo_usuario
-    }
-    trens {
-        int id PK
-        string nome UK
-        enum tipo
-        string imagem
-        int maquinista_id FK
-    }
-    rotas {
-        int id PK
-        int trem_id FK
-        string nome
-        string origem
-        string destino
-        time horario_partida
-        int duracao_min
-        decimal distancia_km
-        string imagem_mapa
-    }
-    sensores {
-        int id PK
-        string nome
-        enum tipo
-        int trem_id FK
-    }
-```
 
-- `trens.maquinista_id` é único: um maquinista conduz no máximo um trem. Se o usuário for excluído, o trem fica sem maquinista.
-- Um trem que ainda tem rotas ou sensores não pode ser excluído.
-- O e-mail do usuário e o nome do trem são únicos.
+-   Acesso do administrador inicial
 
-## Estrutura do projeto
+    - O Database.sql cria o administrador Marcos_Voltolini@gmail.com. Para definir uma senha nova, gere o hash e atualize no banco:
 
-```
+    - C:\xampp\php\php.exe -r "echo password_hash('SuaNovaSenha', PASSWORD_DEFAULT);"
+    - sql
+    - UPDATE usuarios SET senha_usuario = 'COLE_O_HASH_AQUI' WHERE email_usuario =          'Marcos_Voltolini@gmail.com';
+
+    - Logado como administrador, use Usuários > Cadastrar usuário para criar funcionários (que podem ser maquinistas) e outros administradores.
+
+
+-  Regras do banco
+
+    - trens.maquinista_id é único: um maquinista conduz no máximo um trem. Se o usuário for excluído, o trem fica sem maquinista.
+    - Um trem que ainda tem rotas ou sensores não pode ser excluído.
+    - O e-mail do usuário e o nome do trem são únicos.
+    - Como iniciar a aplicação
+        - Confirme que Apache e MySQL estão ligados no XAMPP.
+        - Acesse http://localhost/SA-Ferrorama/.
+        - Entre pela página de login com um usuário cadastrado.
+    - Perfis de acesso e permissões
+    
+    - Ação	
+        - Cliente	
+            - Ver trens, rotas, horários e mapas
+        - Funcionário
+            - Ver trens, rotas, horários, mapas e clientes
+        - Administrador
+            - Ver lista de clientes e cadastrar clientes
+            - Excluir trens, rotas e sensores
+            - Editar / excluir usuários e mudar perfis
+
+    - A checagem é feita no servidor, no começo de cada página, pelos arquivos verifica_login.php, verifica_acesso.php (administrador e funcionário) e verifica_admin.php (só administrador).
+
+
+-   Estrutura geral do projeto
+
 SA-Ferrorama/
 ├── index.php                    página inicial
 ├── dashboard_admin.php          painel do administrador
@@ -110,7 +104,7 @@ SA-Ferrorama/
 ├── pesquisas/                   APIs, PDO, CRUD, Scrum, XAMPP e Kanban
 └── public/
     ├── login.php, logout.php
-    ├── cabecalho.php                    cabeçalho e menu, usado pelas páginas
+    ├── cabecalho.php                    cabeçalho e menu
     ├── verifica_login.php, verifica_acesso.php, verifica_admin.php
     ├── Listar_trens.php, cadastro_trem.php, editar_trens.php, atualizar_trem.php, excluir_trens.php
     ├── Listar_rotas.php, adicionar_rota.php, editar_rotas.php, atualizar_rota.php, excluir_rotas.php
@@ -118,23 +112,45 @@ SA-Ferrorama/
     ├── Listar_clientes.php, cadastrar_usuario.php, cadastrar_admin.php,
     │   editar_clientes.php, atualizar_clientes.php, excluir_clientes.php
     └── Horario_trem.php, Rota_trem.php
-```
 
-Padrão de cada CRUD: `Listar_` mostra a tabela, `cadastro_`/`adicionar_` cria, `editar_` mostra o formulário preenchido, `atualizar_` grava a edição e `excluir_` apaga.
 
-## Segurança aplicada
+-  Padrão de cada CRUD:
 
-- Senhas com `password_hash`; nenhuma tela lê ou mostra a coluna de senha.
-- Consultas com *prepared statements* (sem SQL Injection).
-- Textos vindos do banco são escapados com `htmlspecialchars`.
-- Exclusões só aceitam POST (antes eram links) e só para administrador.
-- Todas as páginas, menos `index.php` e `login.php`, exigem login.
+    - Listar_ mostra a tabela
+    - cadastro_ / adicionar_ cria
+    - editar_ mostra o formulário preenchido
+    - atualizar_ grava a edição
+    - excluir_ apaga
+    - Segurança aplicada
+    - Senhas com password_hash; nenhuma tela lê ou mostra a coluna de senha.
+    - Consultas com prepared statements (sem SQL Injection).
+    - Textos vindos do banco são escapados com htmlspecialchars.
+    - Exclusões só aceitam POST e só para administrador.
+    - Todas as páginas, menos index.php e login.php, exigem login.
 
-## Documentação da equipe
 
-- [`pesquisas/Kanban.md`](pesquisas/Kanban.md): quadro Kanban e backlog
-- [`pesquisas/`](pesquisas/): APIs, PDO, CRUD, Scrum e XAMPP
+-   Integrantes e contribuições
 
-## Licença
+    - Marcos Voltolini (@marcosvoltolini)
+        - Tela de login, página inicial, banco de dados, CRUD de trens, organização do projeto no GitHub
+    - Ramon (@ramontsantos-trindade)
+        - Mockup, dashboard, visualização dos sensores em PHP, correção da exposição de senhas
+    - Davi Rosa (@davigura)
+        - README, CRUD de trens
+    - Rebeca (@rebeca-sarrea)
+        - CRUD, integração com a API de CEP
 
-O arquivo `LICENSE` está vazio. Escolham uma licença (ex.: MIT) ou deixem explícito que o projeto é de uso acadêmico.
+
+-   Limitações conhecidas
+
+    - Os sensores são cadastrados, mas o sistema não recebe leituras em tempo real (velocidade, localização).
+    - O sistema é web e roda localmente no XAMPP; não há versão mobile nem hospedagem online.
+    - As integrações com APIs externas dependem de internet e podem falhar se o serviço estiver fora do ar.
+    - Não há recuperação de senha por e-mail; a troca de senha do administrador inicial é manual, pelo banco.
+    - Não há testes automatizados.
+
+
+-   Documentação da equipe
+
+    - pesquisas/Kanban.md: quadro Kanban e backlog
+    - pesquisas/: APIs, PDO, CRUD, Scrum e XAMPP
