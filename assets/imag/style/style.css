@@ -203,7 +203,7 @@ header :focus-visible {
     padding: 8px 18px;
     border-radius: 999px;
     color: var(--cream);
-    font-size: 1rem;
+    font-size: 1.15rem;  
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -228,16 +228,18 @@ header::after {
 /* ---------- Mensagem de sessão (cabecalho.php) ---------- */
 
 header + p {
-    width: calc(100% - 40px);
-    max-width: 720px;
-    margin: 24px auto 0;
-    padding: 14px 20px;
+    width: fit-content;                    
+    max-width: calc(100% - 40px);          
+    margin: 20px auto 0;
+    padding: 8px 22px;                     
     background-color: var(--surface);
     border: 1px solid var(--line);
-    border-left: 6px solid currentColor;
+    border-left: 4px solid currentColor;   
     border-radius: 12px;
     box-shadow: var(--shadow);
+    font-size: 0.92rem;                   
     font-weight: 600;
+    text-align: center;                   
 }
 
 /* Vermelho/verde "puros" do inline não têm contraste no creme */
@@ -428,6 +430,7 @@ table {
     border-spacing: 0;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    font-size: 1.1rem;                
     font-variant-numeric: tabular-nums;
     overflow: hidden;
     text-align: left;
@@ -435,7 +438,7 @@ table {
 
 th,
 td {
-    padding: 14px 20px;
+    padding: 18px 28px;                
     border: 0;
     border-bottom: 1px solid var(--line);
     vertical-align: middle;
@@ -489,6 +492,7 @@ td form button:hover {
     color: var(--cream);
     filter: none;
 }
+
 
 
 /* ---------- Formulários ---------- */
@@ -757,3 +761,126 @@ form select {
         transition: none !important;
     }
 }
+
+/* ---------- CEP ---------- */
+
+/* ---------- Dashboard: hero / resumo + clima / CEP ---------- */
+
+main:has(> .card-clima) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch; /* resumo e clima com a mesma altura */
+}
+
+/* hero e CEP ocupam a linha inteira */
+main:has(> .card-clima) > .bem,
+main:has(> .card-clima) > .cep-card {
+    grid-column: 1 / -1;
+}
+
+main:has(> .card-clima) > .bem {
+    margin-bottom: 0;
+}
+
+/* resumo e clima: mesma largura, sem limites herdados */
+main:has(> .card-clima) > .adn,
+main:has(> .card-clima) > .card-clima {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+/* resumo: conteúdo centralizado na altura do card */
+main:has(> .card-clima) > .adn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 28px;
+}
+
+/* clima: conteúdo centralizado na altura do card */
+main:has(> .card-clima) > .card-clima {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 32px 28px;
+}
+
+/* celular e tablet pequeno: tudo em uma coluna */
+@media (max-width: 860px) {
+    main:has(> .card-clima) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+
+/* ---------- Card do CEP (largura total) ---------- */
+
+.cep-card {
+    padding: 32px clamp(22px, 4vw, 40px) 36px;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 6px solid var(--wine);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+    text-align: left;
+}
+
+.cep-card h2 {
+    margin: 0 0 22px;
+    color: var(--wine);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* CEP + botão na mesma linha, centralizados */
+.cep-busca {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.cep-linha {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.cep-linha input {
+    flex: 1;
+    margin: 0;
+}
+
+.cep-linha button {
+    width: auto;
+    margin: 0;
+    padding: 0 26px;
+    white-space: nowrap;
+}
+
+#cep-msg {
+    min-height: 24px;
+    margin: 10px 0 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+#cep-msg.cep-erro { color: var(--wine); }
+#cep-msg.cep-ok   { color: #1d6b2f; }
+
+/* resultado: logradouro, bairro, cidade e UF numa linha só */
+.cep-campos {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr 90px;
+    gap: 14px;
+}
+
+.cep-campos input {
+    margin-bottom: 0;
+}
+
+/* campos
